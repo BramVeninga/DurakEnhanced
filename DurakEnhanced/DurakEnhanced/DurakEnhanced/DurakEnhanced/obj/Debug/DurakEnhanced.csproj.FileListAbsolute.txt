@@ -1,0 +1,16 @@
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.csproj.AssemblyReference.cache
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.Controls.JoinGameControl.resources
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.Controls.MainMenuControl.resources
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.Forms.MainForm.resources
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.Properties.Resources.resources
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.csproj.GenerateResource.cache
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.csproj.CoreCompileInputs.cache
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\bin\Debug\DurakEnhanced.exe.config
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\bin\Debug\DurakEnhanced.exe
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\bin\Debug\DurakEnhanced.pdb
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.exe
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.pdb
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.exe.config
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.Controls.CreateGameControl.resources
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.Controls.JoinableGamesListControl.resources
+D:\DurakEnhanced\DurakEnhanced\DurakEnhanced\obj\Debug\DurakEnhanced.Controls.WaitingScreenControl.resources

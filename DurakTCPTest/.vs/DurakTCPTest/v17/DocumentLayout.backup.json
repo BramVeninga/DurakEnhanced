@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\gamelogic\\durakrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\gamelogic\\durakrules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\gamelogic\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\gamelogic\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\gamelogic\\actioncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\gamelogic\\actioncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\gamelogic\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\gamelogic\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\gamelogic\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\gamelogic\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\gamelogic\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\gamelogic\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\networking\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\networking\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|c:\\users\\bram\\desktop\\duraktcptest\\duraktcptest\\networking\\tcpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93099FE8-39A1-4F1F-BED4-8DC130244C7E}|DurakTCPTest\\DurakTCPTest.csproj|solutionrelative:duraktcptest\\networking\\tcpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DurakRules.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\DurakRules.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\gameLogic\\DurakRules.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\DurakRules.cs",
+              "RelativeToolTip": "DurakTCPTest\\gameLogic\\DurakRules.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T09:02:11.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\GameState.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\gameLogic\\GameState.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\GameState.cs",
+              "RelativeToolTip": "DurakTCPTest\\gameLogic\\GameState.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T08:38:32.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActionCard.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\ActionCard.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\gameLogic\\ActionCard.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\ActionCard.cs",
+              "RelativeToolTip": "DurakTCPTest\\gameLogic\\ActionCard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T08:29:28.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameEngine.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\GameEngine.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\gameLogic\\GameEngine.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\GameEngine.cs",
+              "RelativeToolTip": "DurakTCPTest\\gameLogic\\GameEngine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T08:28:12.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\Player.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\gameLogic\\Player.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\Player.cs",
+              "RelativeToolTip": "DurakTCPTest\\gameLogic\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T08:27:47.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Card.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\Card.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\gameLogic\\Card.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\gameLogic\\Card.cs",
+              "RelativeToolTip": "DurakTCPTest\\gameLogic\\Card.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T08:27:16.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TcpClientHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\networking\\TcpClientHandler.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\networking\\TcpClientHandler.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\networking\\TcpClientHandler.cs",
+              "RelativeToolTip": "DurakTCPTest\\networking\\TcpClientHandler.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T07:21:17.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TcpServer.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\networking\\TcpServer.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\networking\\TcpServer.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\networking\\TcpServer.cs",
+              "RelativeToolTip": "DurakTCPTest\\networking\\TcpServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T07:19:53.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "DurakTCPTest\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\MainWindow.xaml",
+              "RelativeToolTip": "DurakTCPTest\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-23T07:10:59.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DurakTCPTest\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakTCPTest\\DurakTCPTest\\MainWindow.xaml.cs",
+              "RelativeToolTip": "DurakTCPTest\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T07:10:58.424Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

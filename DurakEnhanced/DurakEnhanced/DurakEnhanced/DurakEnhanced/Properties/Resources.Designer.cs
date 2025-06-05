@@ -63,6 +63,46 @@ namespace DurakEnhanced.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backdeck {
+            get {
+                object obj = ResourceManager.GetObject("backdeck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backofcard {
+            get {
+                object obj = ResourceManager.GetObject("backofcard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clovers_2_white {
+            get {
+                object obj = ResourceManager.GetObject("Clovers_2_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clovers_Jack_white {
+            get {
+                object obj = ResourceManager.GetObject("Clovers_Jack_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DurakLogo {
             get {
                 object obj = ResourceManager.GetObject("DurakLogo", resourceCulture);
@@ -76,6 +116,56 @@ namespace DurakEnhanced.Properties {
         internal static System.Drawing.Bitmap ESCButton {
             get {
                 object obj = ResourceManager.GetObject("ESCButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hearts_5_white {
+            get {
+                object obj = ResourceManager.GetObject("Hearts_5_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hearts_Queen_white {
+            get {
+                object obj = ResourceManager.GetObject("Hearts_Queen_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pikes_Jack_white {
+            get {
+                object obj = ResourceManager.GetObject("Pikes_Jack_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_6 {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle 6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tiles_King_white {
+            get {
+                object obj = ResourceManager.GetObject("Tiles_King_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

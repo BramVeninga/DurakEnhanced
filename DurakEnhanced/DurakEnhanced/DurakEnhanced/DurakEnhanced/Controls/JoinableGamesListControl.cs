@@ -14,7 +14,7 @@ namespace DurakEnhanced.Controls
 {
     public partial class JoinableGamesListControl : UserControl
     {
-        private MainForm mainForm; // store the reference to MainForm
+        private MainForm mainForm;
         public JoinableGamesListControl(MainForm mainform)
         {
             InitializeComponent();
@@ -34,6 +34,11 @@ namespace DurakEnhanced.Controls
         private void GoBackButon_Click(object sender, EventArgs e)
         {
             mainForm.LoadScreen(new JoinGameControl(mainForm));
+        }
+
+        private void JoinButton_Click(object sender, EventArgs e)
+        {
+            mainForm.LoadScreen(new PlaygroundControl(mainForm));
         }
     }
 }

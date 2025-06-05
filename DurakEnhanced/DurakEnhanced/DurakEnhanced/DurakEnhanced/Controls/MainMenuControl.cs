@@ -33,7 +33,7 @@ namespace DurakEnhanced.Controls
 
         private void RulesButton_Click(object sender, EventArgs e)
         {
-
+            mainForm.LoadScreen(new RulesControl(mainForm));
         }
 
         private void ActionCardsButton_Click(object sender, EventArgs e)

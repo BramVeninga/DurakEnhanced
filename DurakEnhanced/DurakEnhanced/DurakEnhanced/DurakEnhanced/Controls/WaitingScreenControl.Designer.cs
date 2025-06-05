@@ -29,23 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaitingScreenControl));
-            this.GameLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.GameLogo = new System.Windows.Forms.PictureBox();
+            this.play = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GameLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // GameLogo
-            // 
-            this.GameLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.GameLogo.Image = global::DurakEnhanced.Properties.Resources.DurakLogo;
-            this.GameLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("GameLogo.InitialImage")));
-            this.GameLogo.Location = new System.Drawing.Point(562, 3);
-            this.GameLogo.Name = "GameLogo";
-            this.GameLogo.Size = new System.Drawing.Size(275, 280);
-            this.GameLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GameLogo.TabIndex = 16;
-            this.GameLogo.TabStop = false;
             // 
             // label1
             // 
@@ -74,11 +63,34 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // GameLogo
+            // 
+            this.GameLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.GameLogo.Image = global::DurakEnhanced.Properties.Resources.DurakLogo;
+            this.GameLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("GameLogo.InitialImage")));
+            this.GameLogo.Location = new System.Drawing.Point(562, 3);
+            this.GameLogo.Name = "GameLogo";
+            this.GameLogo.Size = new System.Drawing.Size(275, 280);
+            this.GameLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GameLogo.TabIndex = 16;
+            this.GameLogo.TabStop = false;
+            // 
+            // play
+            // 
+            this.play.Location = new System.Drawing.Point(1039, 291);
+            this.play.Name = "play";
+            this.play.Size = new System.Drawing.Size(75, 23);
+            this.play.TabIndex = 19;
+            this.play.Text = "play";
+            this.play.UseVisualStyleBackColor = true;
+            this.play.Click += new System.EventHandler(this.play_Click);
+            // 
             // WaitingScreenControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(236)))), ((int)(((byte)(212)))));
+            this.Controls.Add(this.play);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GameLogo);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.PictureBox GameLogo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button play;
     }
 }

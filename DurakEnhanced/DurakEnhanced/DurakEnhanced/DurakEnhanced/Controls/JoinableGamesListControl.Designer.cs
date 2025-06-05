@@ -89,6 +89,7 @@
             this.JoinButton.TabIndex = 16;
             this.JoinButton.Text = "Join game";
             this.JoinButton.UseVisualStyleBackColor = false;
+            this.JoinButton.Click += new System.EventHandler(this.JoinButton_Click);
             // 
             // JoinableGamesListControl
             // 

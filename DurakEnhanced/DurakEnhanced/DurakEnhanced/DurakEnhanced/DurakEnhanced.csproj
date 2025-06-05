@@ -70,6 +70,18 @@
     <Compile Include="Controls\MainMenuControl.Designer.cs">
       <DependentUpon>MainMenuControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PlaygroundControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PlaygroundControl.Designer.cs">
+      <DependentUpon>PlaygroundControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RulesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RulesControl.Designer.cs">
+      <DependentUpon>RulesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\WaitingScreenControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MainMenuControl.resx">
       <DependentUpon>MainMenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PlaygroundControl.resx">
+      <DependentUpon>PlaygroundControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RulesControl.resx">
+      <DependentUpon>RulesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WaitingScreenControl.resx">
       <DependentUpon>WaitingScreenControl.cs</DependentUpon>
@@ -133,6 +151,33 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clovers_2_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hearts_5_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pikes_Jack_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tiles_King_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hearts_Queen_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clovers_Jack_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backofcard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backdeck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle 6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

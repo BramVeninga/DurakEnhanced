@@ -24,5 +24,10 @@ namespace DurakEnhanced.Controls
         {
             mainForm.LoadScreen(new MainMenuControl(mainForm));
         }
+
+        private void play_Click(object sender, EventArgs e)
+        {
+            mainForm.LoadScreen(new PlaygroundControl(mainForm));
+        }
     }
 }

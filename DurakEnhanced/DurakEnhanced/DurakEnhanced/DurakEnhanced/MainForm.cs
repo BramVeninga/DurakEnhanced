@@ -48,17 +48,25 @@ namespace DurakEnhanced.Forms
                 {
                     LoadScreen(new MainMenuControl(this));
                     return true;
-                } else if(currentControl is CreateGameControl) {
-                    LoadScreen(new JoinGameControl(this));
-                    return true;
-                } else if (currentControl is JoinableGamesListControl) {
+                }
+                else if (currentControl is CreateGameControl)
+                {
                     LoadScreen(new JoinGameControl(this));
                     return true;
                 }
-
+                else if (currentControl is JoinableGamesListControl)
+                {
+                    LoadScreen(new JoinGameControl(this));
+                    return true;
+                }
+                else if (currentControl is RulesControl)
+                {
+                    LoadScreen(new MainMenuControl(this));
+                    return true;
+                }
             }
 
-            return base.ProcessCmdKey(ref msg, keyData);
+            return base.ProcessCmdKey(ref msg, keyData); // Ensure all code paths return a value
         }
     }
 }

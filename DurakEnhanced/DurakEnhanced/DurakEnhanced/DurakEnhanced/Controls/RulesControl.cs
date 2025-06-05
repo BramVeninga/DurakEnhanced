@@ -14,13 +14,16 @@ namespace DurakEnhanced.Controls
     public partial class RulesControl : UserControl
     {
         private MainForm mainForm;
-        public RulesControl(MainForm mainForm)
+        public RulesControl(MainForm mainForm = null)
         {
             InitializeComponent();
             this.mainForm = mainForm;
+
+            // Hide the GoBackButton if not in MainForm context
+            GoBackButton.Visible = (mainForm != null);
         }
 
-        private void GoBackButon_Click(object sender, EventArgs e)
+        private void GoBackButton_Click(object sender, EventArgs e)
         {
             mainForm.LoadScreen(new MainMenuControl(mainForm));
         }

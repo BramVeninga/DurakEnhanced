@@ -2,15 +2,8 @@
 {
     partial class WaitingScreenControl
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaitingScreenControl));
@@ -35,6 +24,7 @@
             this.play = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GameLogo)).BeginInit();
             this.SuspendLayout();
+
             // 
             // label1
             // 
@@ -48,6 +38,7 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Waiting for player to join...";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             // 
             // ExitButton
             // 
@@ -62,6 +53,7 @@
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+
             // 
             // GameLogo
             // 
@@ -74,6 +66,7 @@
             this.GameLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.GameLogo.TabIndex = 16;
             this.GameLogo.TabStop = false;
+
             // 
             // play
             // 
@@ -84,6 +77,7 @@
             this.play.Text = "play";
             this.play.UseVisualStyleBackColor = true;
             this.play.Click += new System.EventHandler(this.play_Click);
+
             // 
             // WaitingScreenControl
             // 
@@ -99,7 +93,6 @@
             this.Size = new System.Drawing.Size(1400, 900);
             ((System.ComponentModel.ISupportInitialize)(this.GameLogo)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

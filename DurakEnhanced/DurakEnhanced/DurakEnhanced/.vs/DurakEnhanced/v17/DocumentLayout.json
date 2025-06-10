@@ -3,19 +3,27 @@
   "WorkspaceRootPath": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\ingamepopupcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\ingamepopupcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\ingamepopupcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\ingamepopupcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\playgroundcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\playgroundcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\playgroundcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\playgroundcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\ingamepopupcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\ingamepopupcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\ingamepopupcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\ingamepopupcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\ingamepopupcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\ingamepopupcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\ingamepopupcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,15 +35,7 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\rulescontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\playgroundcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\playgroundcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\rulescontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\rulescontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\rulescontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -43,35 +43,35 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\creategamecontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\helpers\\cardselectorhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\helpers\\cardselectorhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\helpers\\cardselectorhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\helpers\\popupanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\helpers\\popupanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\helpers\\popupanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\forms\\rulesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\forms\\rulesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\forms\\rulesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\forms\\actioncardsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\forms\\actioncardsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\forms\\actioncardsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\rulescontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\rulescontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\rulescontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\forms\\rulesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\forms\\rulesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\forms\\rulesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\forms\\popupmenuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\forms\\popupmenuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\forms\\popupmenuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\forms\\popupmenuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\forms\\popupmenuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\forms\\popupmenuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -79,7 +79,7 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\creategamecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|d:\\durakgit\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\utils\\inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\utils\\inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\utils\\inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -126,11 +126,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 302,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "IngamePopupControl.cs",
               "DocumentMoniker": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\IngamePopupControl.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\Controls\\IngamePopupControl.cs",
@@ -143,20 +143,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PlaygroundControl.cs",
               "DocumentMoniker": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\PlaygroundControl.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\Controls\\PlaygroundControl.cs",
               "ToolTip": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\PlaygroundControl.cs",
               "RelativeToolTip": "DurakEnhanced\\Controls\\PlaygroundControl.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAhwBwAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wB0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-03T06:24:32.72Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "IngamePopupControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\IngamePopupControl.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\Controls\\IngamePopupControl.cs",
@@ -168,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "PlaygroundControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\PlaygroundControl.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\Controls\\PlaygroundControl.cs",
@@ -180,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\MainForm.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\MainForm.cs",
@@ -192,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\MainForm.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\MainForm.cs",
@@ -205,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "RulesControl.cs",
               "DocumentMoniker": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\RulesControl.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\Controls\\RulesControl.cs",
@@ -213,12 +213,11 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\RulesControl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T06:35:25.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T06:35:25.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "IngamePopupControl.Designer.cs",
               "DocumentMoniker": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\IngamePopupControl.Designer.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\Controls\\IngamePopupControl.Designer.cs",
@@ -226,8 +225,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\IngamePopupControl.Designer.cs",
               "ViewState": "AgIAACwAAAAAAAAAAIAwwFEAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T12:27:46.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T12:27:46.171Z"
             },
             {
               "$type": "Document",
@@ -238,8 +236,7 @@
               "ToolTip": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\RulesControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\RulesControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T06:32:35.061Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-03T06:32:35.061Z"
             },
             {
               "$type": "Document",
@@ -251,8 +248,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\CreateGameControl.Designer.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAAADIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T23:43:05.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T23:43:05.801Z"
             },
             {
               "$type": "Document",
@@ -264,8 +260,7 @@
               "RelativeToolTip": "DurakEnhanced\\Helpers\\CardSelectorHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T13:13:22.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T13:13:22.397Z"
             },
             {
               "$type": "Document",
@@ -277,8 +272,7 @@
               "RelativeToolTip": "DurakEnhanced\\Helpers\\PopupAnimator.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T13:14:12.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T13:14:12.432Z"
             },
             {
               "$type": "Document",
@@ -289,8 +283,7 @@
               "ToolTip": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Forms\\RulesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "DurakEnhanced\\Forms\\RulesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T12:09:38.47Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-05T12:09:38.47Z"
             },
             {
               "$type": "Document",
@@ -301,8 +294,7 @@
               "ToolTip": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Forms\\ActionCardsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "DurakEnhanced\\Forms\\ActionCardsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T12:10:02.031Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-05T12:10:02.031Z"
             },
             {
               "$type": "Document",
@@ -314,8 +306,7 @@
               "RelativeToolTip": "DurakEnhanced\\Forms\\RulesForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T12:10:07.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T12:10:07.102Z"
             },
             {
               "$type": "Document",
@@ -327,8 +318,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\RulesControl.Designer.cs",
               "ViewState": "AgIAADQAAAAAAAAAAIAwwEkAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T12:42:09.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T12:42:09.807Z"
             },
             {
               "$type": "Document",
@@ -339,8 +329,7 @@
               "ToolTip": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Forms\\PopupMenuForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "DurakEnhanced\\Forms\\PopupMenuForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T11:47:35.545Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-05T11:47:35.545Z"
             },
             {
               "$type": "Document",
@@ -352,8 +341,7 @@
               "RelativeToolTip": "DurakEnhanced\\Forms\\PopupMenuForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T11:49:38.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:49:38.188Z"
             },
             {
               "$type": "Document",
@@ -365,8 +353,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\CreateGameControl.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAAADYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T21:39:21.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T21:39:21.073Z"
             },
             {
               "$type": "Document",
@@ -378,8 +365,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\JoinGameControl.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAiwCIAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T20:31:28.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T20:31:28.979Z"
             },
             {
               "$type": "Document",
@@ -390,8 +376,7 @@
               "ToolTip": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\JoinGameControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\JoinGameControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T20:06:52.503Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-01T20:06:52.503Z"
             },
             {
               "$type": "Document",
@@ -402,8 +387,7 @@
               "ToolTip": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\MainMenuControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\MainMenuControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T18:50:17.012Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-01T18:50:17.012Z"
             },
             {
               "$type": "Document",
@@ -414,8 +398,7 @@
               "ToolTip": "D:\\DurakGit\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\CreateGameControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\CreateGameControl.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T21:36:41.025Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-01T21:36:41.025Z"
             },
             {
               "$type": "Document",
@@ -427,8 +410,7 @@
               "RelativeToolTip": "DurakEnhanced\\Utils\\InputValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T11:29:34.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:29:34.647Z"
             },
             {
               "$type": "Document",
@@ -440,8 +422,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\MainMenuControl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T19:11:32.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T19:11:32.981Z"
             },
             {
               "$type": "Document",

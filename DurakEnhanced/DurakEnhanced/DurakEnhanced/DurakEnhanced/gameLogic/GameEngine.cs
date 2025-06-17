@@ -1,15 +1,14 @@
-﻿using System;
+﻿using DurakEnhanced.gameLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DurakTCPTest.gameLogic
+namespace DurakEnhanced.GameLogic
 {
     public class GameEngine
     {
-        public List<Card> Deck { get; private set; } = new();
-        public List<(Card Attack, Card? Defense)> CurrentRound { get; private set; } = new();
+        public List<Card> Deck { get; private set; } = new List<Card>();
+        public List<Tuple<Card, Card>> CurrentRound { get; private set; } = new List<Tuple<Card, Card>>();
 
         public Player Host { get; set; }
         public Player Guest { get; set; }
@@ -19,9 +18,12 @@ namespace DurakTCPTest.gameLogic
 
         public Suit TrumpSuit { get; private set; }
 
-        public bool IsGameOver => Host.Hand.Count == 0 || Guest.Hand.Count == 0;
+        public bool IsGameOver
+        {
+            get { return Host.Hand.Count == 0 || Guest.Hand.Count == 0; }
+        }
 
-        private Random rng = new();
+        private readonly Random rng = new Random();
 
         public void StartGame()
         {
@@ -29,7 +31,7 @@ namespace DurakTCPTest.gameLogic
             ShuffleDeck();
             DealCards();
 
-            TrumpSuit = Deck.Last().Suit;
+            TrumpSuit = Deck[Deck.Count - 1].Suit;
 
             CurrentAttacker = Host;
             CurrentDefender = Guest;
@@ -40,25 +42,16 @@ namespace DurakTCPTest.gameLogic
             Deck.Clear();
             foreach (Suit suit in Enum.GetValues(typeof(Suit)))
             {
-                for (int value = 6; value <= 14; value++) // 6–Ace
+                for (Rank rank = Rank.Six; rank <= Rank.Ace; rank++)
                 {
-                    Deck.Add(new Card { Suit = suit, Value = value });
+                    Deck.Add(new Card(suit, rank));
                 }
             }
         }
 
         private void ShuffleDeck()
         {
-            Deck = Deck.OrderBy(c => rng.Next()).ToList();
-        }
-
-        private void DealCards()
-        {
-            for (int i = 0; i < 6; i++)
-            {
-                Host.Hand.Add(DrawCard());
-                Guest.Hand.Add(DrawCard());
-            }
+            Deck = Deck.OrderBy(_ => rng.Next()).ToList();
         }
 
         private Card DrawCard()
@@ -71,16 +64,38 @@ namespace DurakTCPTest.gameLogic
             return card;
         }
 
+        private void DealCards()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                var hostCard = DrawCard();
+                if (hostCard != null)
+                    Host.Hand.Add(hostCard);
+                var guestCard = DrawCard();
+                if (guestCard != null)
+                    Guest.Hand.Add(guestCard);
+            }
+        }
+
         public bool Attack(Card card)
         {
-            if (!CurrentAttacker.Hand.Contains(card))
+            if (!Host.Hand.Contains(card) && !Guest.Hand.Contains(card))
                 return false;
 
-            if (CurrentRound.Count > 0 && !DurakRules.CanAddToAttack(CurrentRound, card))
+            List<Card> allCards = new List<Card>();
+            foreach (var pair in CurrentRound)
+            {
+                allCards.Add(pair.Item1);
+                if (pair.Item2 != null)
+                    allCards.Add(pair.Item2);
+            }
+
+            if (CurrentRound.Count > 0 &&
+                !DurakRules.IsValidAttackCard(card, allCards))
                 return false;
 
             CurrentAttacker.Hand.Remove(card);
-            CurrentRound.Add((card, null));
+            CurrentRound.Add(new Tuple<Card, Card>(card, null));
             return true;
         }
 
@@ -89,86 +104,52 @@ namespace DurakTCPTest.gameLogic
             if (!CurrentDefender.Hand.Contains(defendCard))
                 return false;
 
-            if (!DurakRules.CanDefend(attackCard, defendCard, TrumpSuit))
+            if (!DurakRules.Beats(defendCard, attackCard, TrumpSuit))
                 return false;
 
-            var pair = CurrentRound.FirstOrDefault(p => p.Attack == attackCard && p.Defense == null);
-            if (pair.Attack == null)
+            int index = -1;
+            for (int i = 0; i < CurrentRound.Count; i++)
+            {
+                if (CurrentRound[i].Item1 == attackCard && CurrentRound[i].Item2 == null)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            if (index == -1)
                 return false;
 
-            int index = CurrentRound.IndexOf(pair);
-            CurrentRound[index] = (attackCard, defendCard);
+            CurrentRound[index] = new Tuple<Card, Card>(attackCard, defendCard);
             CurrentDefender.Hand.Remove(defendCard);
             return true;
         }
 
         public void EndRound()
         {
-            if (!DurakRules.IsRoundOver(CurrentRound))
+            bool allDefended = true;
+            foreach (var pair in CurrentRound)
             {
-                // Verdediger moet kaarten pakken
+                if (pair.Item2 == null)
+                {
+                    allDefended = false;
+                    break;
+                }
+            }
+
+            if (!allDefended)
+            {
+                // Defender takes all cards
                 foreach (var pair in CurrentRound)
                 {
-                    CurrentDefender.Hand.Add(pair.Attack);
-                    if (pair.Defense != null)
-                        CurrentDefender.Hand.Add(pair.Defense);
+                    CurrentDefender.Hand.Add(pair.Item1);
+                    if (pair.Item2 != null)
+                        CurrentDefender.Hand.Add(pair.Item2);
                 }
+                // Roles stay the same
             }
-
-            RefillHands();
-
-            // Beurten wisselen: als verdediging succesvol, dan aanvaller wisselt
-            if (DurakRules.IsRoundOver(CurrentRound))
-                SwapTurns();
+            // else: logic for successful defense and role switch can be added here
 
             CurrentRound.Clear();
-        }
-
-        private void SwapTurns()
-        {
-            var temp = CurrentAttacker;
-            CurrentAttacker = CurrentDefender;
-            CurrentDefender = temp;
-        }
-
-        private void RefillHands()
-        {
-            var players = new[] { Host, Guest };
-
-            foreach (var player in players.OrderBy(p => p == CurrentAttacker ? 0 : 1))
-            {
-                while (player.Hand.Count < 6 && Deck.Count > 0)
-                {
-                    player.Hand.Add(DrawCard());
-                }
-            }
-        }
-
-        public GameState GetCurrentState(bool includeHands = false)
-        {
-            return new GameState
-            {
-                Deck = new List<Card>(Deck),
-                CurrentRound = new List<(Card, Card?)>(CurrentRound),
-                Host = new PlayerState
-                {
-                    Name = Host.Name,
-                    CardCount = Host.Hand.Count,
-                    Hand = includeHands ? new List<Card>(Host.Hand) : null,
-                    ActionCards = new List<ActionCard>() // empty for now
-                },
-                Guest = new PlayerState
-                {
-                    Name = Guest.Name,
-                    CardCount = Guest.Hand.Count,
-                    Hand = includeHands ? new List<Card>(Guest.Hand) : null,
-                    ActionCards = new List<ActionCard>() // empty for now
-                },
-                TrumpSuit = TrumpSuit.ToString(),
-                CurrentAttackerName = CurrentAttacker.Name,
-                CurrentDefenderName = CurrentDefender.Name,
-                Phase = IsGameOver ? "GameOver" : "InProgress"
-            };
         }
     }
 }

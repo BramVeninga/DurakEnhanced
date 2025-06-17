@@ -1,35 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace DurakTCPTest.gameLogic
+namespace DurakEnhanced.GameLogic
 {
     public static class DurakRules
     {
-        public static bool CanDefend(Card attack, Card defend, Suit trumpSuit)
+        /// <summary>
+        /// Determines if cardA beats cardB, given the trump suit.
+        /// </summary>
+        public static bool Beats(Card cardA, Card cardB, Suit trumpSuit)
         {
-            if (attack.Suit == defend.Suit && defend.Value > attack.Value)
-                return true;
+            if (cardA.Suit == cardB.Suit)
+                return cardA.Rank > cardB.Rank;
 
-            if (defend.Suit == trumpSuit && attack.Suit != trumpSuit)
+            if (cardA.Suit == trumpSuit && cardB.Suit != trumpSuit)
                 return true;
 
             return false;
         }
 
-        public static bool CanAddToAttack(List<(Card Attack, Card? Defense)> currentRound, Card newCard)
+        /// <summary>
+        /// Determines if a card is valid to add to the current trick on the table.
+        /// A card is valid if its rank matches any card in the current trick.
+        /// </summary>
+        public static bool IsValidAttackCard(Card newCard, List<Card> currentCardsOnTable)
         {
-            // Je mag aanvallen met kaarten die gelijk zijn aan reeds gespeelde waarden
-            return currentRound.Any(pair => pair.Attack.Value == newCard.Value || (pair.Defense != null && pair.Defense.Value == newCard.Value));
+            foreach (var card in currentCardsOnTable)
+            {
+                if (newCard.Rank == card.Rank)
+                    return true;
+            }
+            return currentCardsOnTable.Count == 0; // The first card is always allowed
         }
 
-        public static bool IsRoundOver(List<(Card Attack, Card? Defense)> currentRound)
+        /// <summary>
+        /// Maximum number of cards on the table at once (depends on number of players).
+        /// Usually 6 for 2 players.
+        /// </summary>
+        public static int GetMaxCardsOnTable(int numberOfPlayers)
         {
-            // Ronde is over als alle aanvallen verdedigd zijn
-            return currentRound.All(pair => pair.Defense != null);
+            return numberOfPlayers == 2 ? 6 : 5;
         }
     }
-
 }

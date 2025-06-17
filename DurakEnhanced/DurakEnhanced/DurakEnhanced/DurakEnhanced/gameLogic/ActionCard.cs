@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DurakTCPTest.gameLogic
+namespace DurakEnhanced.gameLogic
 {
     public enum ActionCardTier { Troll, Tier2, Tier3, Tier4, God }
 

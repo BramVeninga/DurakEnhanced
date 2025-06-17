@@ -25,7 +25,7 @@ namespace DurakEnhanced.Controls
             
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void GameNameTextbox_TextChanged(object sender, EventArgs e)
         {
             
         }

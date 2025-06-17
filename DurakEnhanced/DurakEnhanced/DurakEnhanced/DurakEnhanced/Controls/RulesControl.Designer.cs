@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RulesControl));
             this.RulesLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.GoBackButon = new System.Windows.Forms.Button();
+            this.GoBackButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,19 +59,19 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // GoBackButon
+            // GoBackButton
             // 
-            this.GoBackButon.BackColor = System.Drawing.Color.Transparent;
-            this.GoBackButon.BackgroundImage = global::DurakEnhanced.Properties.Resources.ESCButton;
-            this.GoBackButon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.GoBackButon.FlatAppearance.BorderSize = 0;
-            this.GoBackButon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GoBackButon.Location = new System.Drawing.Point(3, 3);
-            this.GoBackButon.Name = "GoBackButon";
-            this.GoBackButon.Size = new System.Drawing.Size(74, 76);
-            this.GoBackButon.TabIndex = 10;
-            this.GoBackButon.UseVisualStyleBackColor = false;
-            this.GoBackButon.Click += new System.EventHandler(this.GoBackButon_Click);
+            this.GoBackButton.BackColor = System.Drawing.Color.Transparent;
+            this.GoBackButton.BackgroundImage = global::DurakEnhanced.Properties.Resources.ESCButton;
+            this.GoBackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.GoBackButton.FlatAppearance.BorderSize = 0;
+            this.GoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoBackButton.Location = new System.Drawing.Point(3, 3);
+            this.GoBackButton.Name = "GoBackButton";
+            this.GoBackButton.Size = new System.Drawing.Size(74, 76);
+            this.GoBackButton.TabIndex = 10;
+            this.GoBackButton.UseVisualStyleBackColor = false;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             // 
             // label1
             // 
@@ -93,7 +93,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.RulesLabel);
-            this.Controls.Add(this.GoBackButon);
+            this.Controls.Add(this.GoBackButton);
             this.MinimumSize = new System.Drawing.Size(1400, 900);
             this.Name = "RulesControl";
             this.Size = new System.Drawing.Size(1400, 900);
@@ -105,7 +105,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button GoBackButon;
+        private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.Label RulesLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;

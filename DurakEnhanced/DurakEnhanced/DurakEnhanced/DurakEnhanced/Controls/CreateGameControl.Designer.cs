@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateGameControl));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.GameNameTextbox = new System.Windows.Forms.TextBox();
             this.CreateGameButton = new System.Windows.Forms.Button();
             this.GoBackButon = new System.Windows.Forms.Button();
             this.GameLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GameLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // GameNameTextbox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(225)))), ((int)(((byte)(186)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Inknut Antiqua", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(382, 345);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(600, 96);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.Text = "Enter name";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.GameNameTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(225)))), ((int)(((byte)(186)))));
+            this.GameNameTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GameNameTextbox.Font = new System.Drawing.Font("Inknut Antiqua", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameNameTextbox.Location = new System.Drawing.Point(382, 345);
+            this.GameNameTextbox.Name = "GameNameTextbox";
+            this.GameNameTextbox.Size = new System.Drawing.Size(600, 96);
+            this.GameNameTextbox.TabIndex = 10;
+            this.GameNameTextbox.Text = "Enter name";
+            this.GameNameTextbox.TextChanged += new System.EventHandler(this.GameNameTextbox_TextChanged);
             // 
             // CreateGameButton
             // 
@@ -95,7 +95,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(236)))), ((int)(((byte)(212)))));
             this.Controls.Add(this.GoBackButon);
             this.Controls.Add(this.CreateGameButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.GameNameTextbox);
             this.Controls.Add(this.GameLogo);
             this.MinimumSize = new System.Drawing.Size(1400, 900);
             this.Name = "CreateGameControl";
@@ -110,7 +110,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox GameLogo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox GameNameTextbox;
         private System.Windows.Forms.Button CreateGameButton;
         private System.Windows.Forms.Button GoBackButon;
     }

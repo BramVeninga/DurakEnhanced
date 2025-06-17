@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\creategamecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\creategamecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\creategamecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,11 +11,11 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\creategamecontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\creategamecontrol.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\creategamecontrol.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\creategamecontrol.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\joinablegameslistcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\joinablegameslistcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\joinablegameslistcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,7 +27,7 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\joinablegameslistcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\joinablegameslistcontrol.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\joinablegameslistcontrol.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\joinablegameslistcontrol.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
@@ -43,7 +43,7 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\playgroundcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\rulescontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\rulescontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\rulescontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -51,7 +51,7 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\waitingscreencontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\controls\\waitingscreencontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\controls\\waitingscreencontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\waitingscreencontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -59,7 +59,7 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\creategamecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\networking\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\networking\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\networking\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -67,11 +67,11 @@
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\controls\\waitingscreencontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\networking\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\networking\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\networking\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|c:\\users\\bram\\desktop\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\durakenhanced\\networking\\tcpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\durakenhanced\\networking\\tcpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BAC0557-CD3B-4C56-B804-F5936CA258D9}|DurakEnhanced\\DurakEnhanced.csproj|solutionrelative:durakenhanced\\networking\\tcpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -118,8 +118,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\JoinableGamesListControl.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T12:33:34.191Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T12:33:34.191Z"
             },
             {
               "$type": "Document",
@@ -130,8 +129,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\JoinableGamesListControl.cs [Design]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\JoinableGamesListControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T22:34:03.415Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-01T22:34:03.415Z"
             },
             {
               "$type": "Document",
@@ -143,8 +141,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\JoinableGamesListControl.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAiwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T22:40:50.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T22:40:50.261Z"
             },
             {
               "$type": "Document",
@@ -155,8 +152,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\CreateGameControl.resx",
               "RelativeToolTip": "DurakEnhanced\\Controls\\CreateGameControl.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-06-05T11:10:36.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:10:36.526Z"
             },
             {
               "$type": "Document",
@@ -168,8 +164,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\CreateGameControl.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T23:43:05.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T23:43:05.801Z"
             },
             {
               "$type": "Document",
@@ -177,9 +172,9 @@
               "Title": "CreateGameControl.cs",
               "DocumentMoniker": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\CreateGameControl.cs",
               "RelativeDocumentMoniker": "DurakEnhanced\\Controls\\CreateGameControl.cs",
-              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\CreateGameControl.cs*",
-              "RelativeToolTip": "DurakEnhanced\\Controls\\CreateGameControl.cs*",
-              "ViewState": "AgIAACkAAAAAAAAAAAAQwBQAAABNAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\CreateGameControl.cs",
+              "RelativeToolTip": "DurakEnhanced\\Controls\\CreateGameControl.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAzwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-01T21:39:21.073Z",
               "EditorCaption": ""
@@ -193,8 +188,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\JoinableGamesListControl.resx",
               "RelativeToolTip": "DurakEnhanced\\Controls\\JoinableGamesListControl.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-06-05T12:33:37.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T12:33:37.665Z"
             },
             {
               "$type": "Document",
@@ -205,8 +199,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\JoinGameControl.cs [Design]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\JoinGameControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T20:06:52.503Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-01T20:06:52.503Z"
             },
             {
               "$type": "Document",
@@ -217,8 +210,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\MainMenuControl.cs [Design]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\MainMenuControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T18:50:17.012Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-01T18:50:17.012Z"
             },
             {
               "$type": "Document",
@@ -229,8 +221,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\PlaygroundControl.cs [Design]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\PlaygroundControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T05:12:16.066Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-03T05:12:16.066Z"
             },
             {
               "$type": "Document",
@@ -241,8 +232,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\RulesControl.cs [Design]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\RulesControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T06:32:35.061Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-03T06:32:35.061Z"
             },
             {
               "$type": "Document",
@@ -253,8 +243,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\WaitingScreenControl.cs [Design]",
               "RelativeToolTip": "DurakEnhanced\\Controls\\WaitingScreenControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T23:24:27.292Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-01T23:24:27.292Z"
             },
             {
               "$type": "Document",
@@ -266,8 +255,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\WaitingScreenControl.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T11:28:41.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:28:41.399Z"
             },
             {
               "$type": "Document",
@@ -278,8 +266,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls\\CreateGameControl.cs [Design]*",
               "RelativeToolTip": "DurakEnhanced\\Controls\\CreateGameControl.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T21:36:41.025Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-01T21:36:41.025Z"
             },
             {
               "$type": "Document",
@@ -291,8 +278,7 @@
               "RelativeToolTip": "DurakEnhanced\\Networking\\NetworkManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T11:03:30.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:03:30.632Z"
             },
             {
               "$type": "Document",
@@ -304,8 +290,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\WaitingScreenControl.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwB0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T23:29:08.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T23:29:08.504Z"
             },
             {
               "$type": "Document",
@@ -317,8 +302,7 @@
               "RelativeToolTip": "DurakEnhanced\\Networking\\TcpServer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T11:06:20.944Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:06:20.944Z"
             },
             {
               "$type": "Document",
@@ -330,8 +314,7 @@
               "RelativeToolTip": "DurakEnhanced\\Networking\\TcpClientHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T11:05:28.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T11:05:28.666Z"
             },
             {
               "$type": "Document",
@@ -342,8 +325,7 @@
               "ToolTip": "C:\\Users\\Bram\\Desktop\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\MainForm.cs [Design]",
               "RelativeToolTip": "DurakEnhanced\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T23:16:31.131Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-01T23:16:31.131Z"
             },
             {
               "$type": "Document",
@@ -355,8 +337,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\RulesControl.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAUwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T06:35:25.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T06:35:25.294Z"
             },
             {
               "$type": "Document",
@@ -368,8 +349,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\MainMenuControl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T19:11:32.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T19:11:32.981Z"
             },
             {
               "$type": "Document",
@@ -381,8 +361,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\PlaygroundControl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T06:24:32.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T06:24:32.72Z"
             },
             {
               "$type": "Document",
@@ -394,8 +373,7 @@
               "RelativeToolTip": "DurakEnhanced\\MainForm.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAwwDgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T20:10:21.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T20:10:21.396Z"
             },
             {
               "$type": "Document",
@@ -407,8 +385,7 @@
               "RelativeToolTip": "DurakEnhanced\\Controls\\JoinGameControl.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAiwCcAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T20:31:28.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T20:31:28.979Z"
             }
           ]
         },

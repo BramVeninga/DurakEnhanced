@@ -175,6 +175,9 @@ namespace DurakEnhanced.GameLogic
 
         public void StartMoveTimer()
         {
+            if (moveTimer != null)
+                moveTimer.Elapsed -= OnMoveTimeout; // Prevent duplicate attachment
+
             moveTimer?.Stop();
             moveTimer = new Timer(MoveTimeoutMilliseconds);
             moveTimer.Elapsed += OnMoveTimeout;

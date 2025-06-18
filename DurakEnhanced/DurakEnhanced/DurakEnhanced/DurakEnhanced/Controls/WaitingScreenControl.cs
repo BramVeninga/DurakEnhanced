@@ -24,7 +24,7 @@ namespace DurakEnhanced.Controls
             mainForm.LoadScreen(new PlaygroundControl(mainForm));
         }
 
-        // Publieke methode om de status bij te werken
+        // Update status (e.g. waiting...)
         public void SetStatus(string message)
         {
             if (InvokeRequired)
@@ -34,6 +34,20 @@ namespace DurakEnhanced.Controls
             else
             {
                 label1.Text = message;
+            }
+        }
+
+        // Update connection info (IP and Port)
+        public void SetConnectionInfo(string ip, int port)
+        {
+            string info = $"IP Address: {ip}\nPort: {port}";
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => labelConnectionInfo.Text = info));
+            }
+            else
+            {
+                labelConnectionInfo.Text = info;
             }
         }
     }

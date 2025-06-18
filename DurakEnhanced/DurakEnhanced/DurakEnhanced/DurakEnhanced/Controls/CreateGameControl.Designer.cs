@@ -40,10 +40,11 @@
             // 
             this.GameNameTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(225)))), ((int)(((byte)(186)))));
             this.GameNameTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GameNameTextbox.Font = new System.Drawing.Font("Inknut Antiqua", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GameNameTextbox.Location = new System.Drawing.Point(382, 345);
+            this.GameNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameNameTextbox.Location = new System.Drawing.Point(573, 531);
+            this.GameNameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GameNameTextbox.Name = "GameNameTextbox";
-            this.GameNameTextbox.Size = new System.Drawing.Size(600, 96);
+            this.GameNameTextbox.Size = new System.Drawing.Size(900, 63);
             this.GameNameTextbox.TabIndex = 10;
             this.GameNameTextbox.Text = "Enter name";
             this.GameNameTextbox.TextChanged += new System.EventHandler(this.GameNameTextbox_TextChanged);
@@ -52,10 +53,11 @@
             // 
             this.CreateGameButton.BackColor = System.Drawing.Color.Transparent;
             this.CreateGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateGameButton.Font = new System.Drawing.Font("Inknut Antiqua", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateGameButton.Location = new System.Drawing.Point(411, 463);
+            this.CreateGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateGameButton.Location = new System.Drawing.Point(616, 712);
+            this.CreateGameButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CreateGameButton.Name = "CreateGameButton";
-            this.CreateGameButton.Size = new System.Drawing.Size(545, 138);
+            this.CreateGameButton.Size = new System.Drawing.Size(818, 212);
             this.CreateGameButton.TabIndex = 11;
             this.CreateGameButton.Text = "Create game";
             this.CreateGameButton.UseVisualStyleBackColor = false;
@@ -68,9 +70,10 @@
             this.GoBackButon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.GoBackButon.FlatAppearance.BorderSize = 0;
             this.GoBackButon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GoBackButon.Location = new System.Drawing.Point(3, 3);
+            this.GoBackButon.Location = new System.Drawing.Point(4, 5);
+            this.GoBackButon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GoBackButon.Name = "GoBackButon";
-            this.GoBackButon.Size = new System.Drawing.Size(74, 76);
+            this.GoBackButon.Size = new System.Drawing.Size(111, 117);
             this.GoBackButon.TabIndex = 12;
             this.GoBackButon.UseVisualStyleBackColor = false;
             this.GoBackButon.Click += new System.EventHandler(this.GoBackButon_Click);
@@ -80,9 +83,10 @@
             this.GameLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.GameLogo.Image = global::DurakEnhanced.Properties.Resources.DurakLogo;
             this.GameLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("GameLogo.InitialImage")));
-            this.GameLogo.Location = new System.Drawing.Point(561, 3);
+            this.GameLogo.Location = new System.Drawing.Point(842, 5);
+            this.GameLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GameLogo.Name = "GameLogo";
-            this.GameLogo.Size = new System.Drawing.Size(275, 280);
+            this.GameLogo.Size = new System.Drawing.Size(412, 431);
             this.GameLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.GameLogo.TabIndex = 9;
             this.GameLogo.TabStop = false;
@@ -90,16 +94,17 @@
             // 
             // CreateGameControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(236)))), ((int)(((byte)(212)))));
             this.Controls.Add(this.GoBackButon);
             this.Controls.Add(this.CreateGameButton);
             this.Controls.Add(this.GameNameTextbox);
             this.Controls.Add(this.GameLogo);
-            this.MinimumSize = new System.Drawing.Size(1400, 900);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(2100, 1385);
             this.Name = "CreateGameControl";
-            this.Size = new System.Drawing.Size(1400, 900);
+            this.Size = new System.Drawing.Size(2100, 1385);
             this.Load += new System.EventHandler(this.CreateGameControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GameLogo)).EndInit();
             this.ResumeLayout(false);

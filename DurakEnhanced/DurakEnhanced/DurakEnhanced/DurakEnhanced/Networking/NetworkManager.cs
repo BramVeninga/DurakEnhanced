@@ -52,5 +52,27 @@ namespace DurakEnhanced.Networking
                 }
             });
         }
+
+        public string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
+        }
+
+        public int GetPort()
+        {
+            if (Server?.LocalEndpoint is IPEndPoint endPoint)
+            {
+                return endPoint.Port;
+            }
+            return -1;
+        }
     }
 }

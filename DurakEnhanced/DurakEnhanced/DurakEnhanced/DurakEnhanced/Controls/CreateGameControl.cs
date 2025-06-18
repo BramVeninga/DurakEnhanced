@@ -42,7 +42,7 @@ namespace DurakEnhanced.Controls
 
         private void CreateGameButton_Click(object sender, EventArgs e)
         {
-            string playerName = textBox1.Text.Trim();
+            string playerName = GameNameTextbox.Text.Trim();
 
             if (!InputValidator.IsGameNameValid(playerName))
             {

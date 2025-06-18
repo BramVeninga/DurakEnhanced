@@ -4,8 +4,10 @@
     "\\DurakEnhanced",
     "\\DurakEnhanced\\DurakEnhanced",
     "\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced",
-    "\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced"
+    "\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced",
+    "\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\Controls",
+    "\\DurakTCPTest"
   ],
-  "SelectedNode": "\\DurakEnhanced\\DurakEnhanced",
+  "SelectedNode": "\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced\\DurakEnhanced.sln",
   "PreviewInSolutionExplorer": false
 }

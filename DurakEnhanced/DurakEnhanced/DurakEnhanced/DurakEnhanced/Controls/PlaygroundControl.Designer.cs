@@ -43,6 +43,8 @@
             this.Card2 = new System.Windows.Forms.Button();
             this.Card1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rollResultLabel = new System.Windows.Forms.Label();
+            this.rollDiceButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -135,7 +137,7 @@
             // 
             this.Card6.BackgroundImage = global::DurakEnhanced.Properties.Resources.Clovers_Jack_white;
             this.Card6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Card6.Location = new System.Drawing.Point(1004, 682);
+            this.Card6.Location = new System.Drawing.Point(1005, 658);
             this.Card6.Name = "Card6";
             this.Card6.Size = new System.Drawing.Size(135, 199);
             this.Card6.TabIndex = 6;
@@ -146,7 +148,7 @@
             // 
             this.Card5.BackgroundImage = global::DurakEnhanced.Properties.Resources.Hearts_Queen_white;
             this.Card5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Card5.Location = new System.Drawing.Point(853, 682);
+            this.Card5.Location = new System.Drawing.Point(854, 658);
             this.Card5.Name = "Card5";
             this.Card5.Size = new System.Drawing.Size(135, 199);
             this.Card5.TabIndex = 5;
@@ -157,7 +159,7 @@
             // 
             this.Card4.BackgroundImage = global::DurakEnhanced.Properties.Resources.Tiles_King_white;
             this.Card4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Card4.Location = new System.Drawing.Point(701, 682);
+            this.Card4.Location = new System.Drawing.Point(702, 658);
             this.Card4.Name = "Card4";
             this.Card4.Size = new System.Drawing.Size(135, 199);
             this.Card4.TabIndex = 4;
@@ -168,7 +170,7 @@
             // 
             this.Card3.BackgroundImage = global::DurakEnhanced.Properties.Resources.Pikes_Jack_white;
             this.Card3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Card3.Location = new System.Drawing.Point(549, 682);
+            this.Card3.Location = new System.Drawing.Point(550, 658);
             this.Card3.Name = "Card3";
             this.Card3.Size = new System.Drawing.Size(135, 199);
             this.Card3.TabIndex = 3;
@@ -179,7 +181,7 @@
             // 
             this.Card2.BackgroundImage = global::DurakEnhanced.Properties.Resources.Hearts_5_white;
             this.Card2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Card2.Location = new System.Drawing.Point(396, 682);
+            this.Card2.Location = new System.Drawing.Point(397, 658);
             this.Card2.Name = "Card2";
             this.Card2.Size = new System.Drawing.Size(135, 199);
             this.Card2.TabIndex = 2;
@@ -190,7 +192,7 @@
             // 
             this.Card1.BackgroundImage = global::DurakEnhanced.Properties.Resources.Clovers_2_white;
             this.Card1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Card1.Location = new System.Drawing.Point(245, 682);
+            this.Card1.Location = new System.Drawing.Point(246, 658);
             this.Card1.Name = "Card1";
             this.Card1.Size = new System.Drawing.Size(135, 199);
             this.Card1.TabIndex = 1;
@@ -206,11 +208,33 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // rollResultLabel
+            // 
+            this.rollResultLabel.AutoSize = true;
+            this.rollResultLabel.Location = new System.Drawing.Point(1117, 355);
+            this.rollResultLabel.Name = "rollResultLabel";
+            this.rollResultLabel.Size = new System.Drawing.Size(55, 13);
+            this.rollResultLabel.TabIndex = 14;
+            this.rollResultLabel.Text = "RollResult";
+            this.rollResultLabel.Click += new System.EventHandler(this.rollResultLabel_Click);
+            // 
+            // rollDiceButton
+            // 
+            this.rollDiceButton.Location = new System.Drawing.Point(1107, 371);
+            this.rollDiceButton.Name = "rollDiceButton";
+            this.rollDiceButton.Size = new System.Drawing.Size(75, 23);
+            this.rollDiceButton.TabIndex = 15;
+            this.rollDiceButton.Text = "Roll D20";
+            this.rollDiceButton.UseVisualStyleBackColor = true;
+            this.rollDiceButton.Click += new System.EventHandler(this.rollDiceButton_Click);
+            // 
             // PlaygroundControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(236)))), ((int)(((byte)(212)))));
+            this.Controls.Add(this.rollDiceButton);
+            this.Controls.Add(this.rollResultLabel);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
@@ -238,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -257,5 +282,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label rollResultLabel;
+        private System.Windows.Forms.Button rollDiceButton;
     }
 }

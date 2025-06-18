@@ -73,6 +73,24 @@ namespace DurakEnhanced.GameLogic
             return card;
         }
 
+        private void RefillHands()
+        {
+            // Attacker refills first, then defender (according to rules)
+            while (CurrentAttacker.Hand.Count < 6 && Deck.Count > 0)
+            {
+                var card = DrawCard();
+                if (card != null)
+                    CurrentAttacker.Hand.Add(card);
+            }
+
+            while (CurrentDefender.Hand.Count < 6 && Deck.Count > 0)
+            {
+                var card = DrawCard();
+                if (card != null)
+                    CurrentDefender.Hand.Add(card);
+            }
+        }
+
         private void DealCards()
         {
             for (int i = 0; i < 6; i++)
@@ -155,13 +173,7 @@ namespace DurakEnhanced.GameLogic
 
             if (!allDefended)
             {
-                // Defender takes all cards
-                foreach (var pair in CurrentRound)
-                {
-                    CurrentDefender.Hand.Add(pair.Item1);
-                    if (pair.Item2 != null)
-                        CurrentDefender.Hand.Add(pair.Item2);
-                }
+                DefenderTakesAllCards();
                 // Roles stay the same
             }
             else
@@ -170,7 +182,18 @@ namespace DurakEnhanced.GameLogic
             }
 
             CurrentRound.Clear();
+            RefillHands();
             StartMoveTimer();
+        }
+
+        private void DefenderTakesAllCards()
+        {
+            foreach (var pair in CurrentRound)
+            {
+                CurrentDefender.Hand.Add(pair.Item1);
+                if (pair.Item2 != null)
+                    CurrentDefender.Hand.Add(pair.Item2);
+            }
         }
 
         public void StartMoveTimer()

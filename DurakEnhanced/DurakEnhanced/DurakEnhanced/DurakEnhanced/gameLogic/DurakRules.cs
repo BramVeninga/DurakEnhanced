@@ -31,14 +31,5 @@ namespace DurakEnhanced.GameLogic
             }
             return currentCardsOnTable.Count == 0; // The first card is always allowed
         }
-
-        /// <summary>
-        /// Maximum number of cards on the table at once (depends on number of players).
-        /// Usually 6 for 2 players.
-        /// </summary>
-        public static int GetMaxCardsOnTable(int numberOfPlayers)
-        {
-            return numberOfPlayers == 2 ? 6 : 5;
-        }
     }
 }

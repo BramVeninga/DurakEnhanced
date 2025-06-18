@@ -159,8 +159,46 @@ namespace DurakEnhanced.GameLogic
             CurrentDefender = temp;
         }
 
-        public void EndRound()
+        public void EndRound(bool timedOut = false)
         {
+            if (timedOut)
+            {
+                // Timeout on attacker (their turn to add cards)
+                if (CurrentRound.Count == 0)
+                {
+                    Console.WriteLine("Attacker timed out before any attack — skipping turn.");
+                    SwapRoles();
+                    CurrentRound.Clear();
+                    RefillHands();
+                    StartMoveTimer();
+                    CheckForWinner();
+                    return;
+                }
+
+                // Timeout on defender (some cards attacked, but not fully defended)
+                bool anyUnanswered = CurrentRound.Any(pair => pair.Item2 == null);
+                if (anyUnanswered)
+                {
+                    Console.WriteLine("Defender timed out — failed to defend all cards.");
+                    DefenderTakesAllCards();
+                    CurrentRound.Clear();
+                    RefillHands();
+                    StartMoveTimer();
+                    CheckForWinner();
+                    return;
+                }
+
+                // Defender already fully defended but attacker didn’t end manually
+                Console.WriteLine("Timeout with full defense — ending round.");
+                SwapRoles();
+                CurrentRound.Clear();
+                RefillHands();
+                StartMoveTimer();
+                CheckForWinner();
+                return;
+            }
+
+            // Normal non-timeout flow
             bool allDefended = true;
             foreach (var pair in CurrentRound)
             {
@@ -184,7 +222,28 @@ namespace DurakEnhanced.GameLogic
             CurrentRound.Clear();
             RefillHands();
             StartMoveTimer();
+            CheckForWinner();
         }
+
+
+        private void CheckForWinner()
+        {
+            if (Host.Hand.Count == 0 && Guest.Hand.Count == 0 && Deck.Count == 0)
+            {
+                Console.WriteLine("Draw! Both players are out of cards.");
+                return;
+            }
+
+            if (Host.Hand.Count == 0 && Deck.Count == 0)
+            {
+                Console.WriteLine($"{Host.Name} wins!");
+            }
+            else if (Guest.Hand.Count == 0 && Deck.Count == 0)
+            {
+                Console.WriteLine($"{Guest.Name} wins!");
+            }
+        }
+
 
         private void DefenderTakesAllCards()
         {

@@ -167,6 +167,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RulesControl.resx">
       <DependentUpon>RulesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WaitingScreenControl.resx">
       <DependentUpon>WaitingScreenControl.cs</DependentUpon>

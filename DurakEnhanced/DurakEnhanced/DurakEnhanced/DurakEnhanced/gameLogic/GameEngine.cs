@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Timers;
+
 
 namespace DurakEnhanced.GameLogic
 {
@@ -25,6 +27,11 @@ namespace DurakEnhanced.GameLogic
 
         private readonly Random rng = new Random();
 
+        private Timer moveTimer;
+
+        private const int MoveTimeoutMilliseconds = 60000; // 60 seconds
+
+
         public void StartGame()
         {
             CreateDeck();
@@ -35,6 +42,8 @@ namespace DurakEnhanced.GameLogic
 
             CurrentAttacker = Host;
             CurrentDefender = Guest;
+
+            StartMoveTimer();
         }
 
         private void CreateDeck()
@@ -93,7 +102,7 @@ namespace DurakEnhanced.GameLogic
             if (CurrentRound.Count > 0 &&
                 !DurakRules.IsValidAttackCard(card, allCards))
                 return false;
-
+            moveTimer?.Stop();
             CurrentAttacker.Hand.Remove(card);
             CurrentRound.Add(new Tuple<Card, Card>(card, null));
             return true;
@@ -119,9 +128,17 @@ namespace DurakEnhanced.GameLogic
             if (index == -1)
                 return false;
 
+            moveTimer?.Stop();
             CurrentRound[index] = new Tuple<Card, Card>(attackCard, defendCard);
             CurrentDefender.Hand.Remove(defendCard);
             return true;
+        }
+
+        private void SwapRoles()
+        {
+            var temp = CurrentAttacker;
+            CurrentAttacker = CurrentDefender;
+            CurrentDefender = temp;
         }
 
         public void EndRound()
@@ -147,9 +164,35 @@ namespace DurakEnhanced.GameLogic
                 }
                 // Roles stay the same
             }
-            // else: logic for successful defense and role switch can be added here
+            else
+            {
+                SwapRoles();
+            }
 
             CurrentRound.Clear();
+            StartMoveTimer();
         }
+
+        public void StartMoveTimer()
+        {
+            if (moveTimer != null)
+                moveTimer.Elapsed -= OnMoveTimeout; // Prevent duplicate attachment
+
+            moveTimer?.Stop();
+            moveTimer = new Timer(MoveTimeoutMilliseconds);
+            moveTimer.Elapsed += OnMoveTimeout;
+            moveTimer.AutoReset = false;
+            moveTimer.Start();
+        }
+
+        private void OnMoveTimeout(object sender, ElapsedEventArgs e)
+        {
+            moveTimer.Stop();
+            Console.WriteLine($"Timeout! {CurrentAttacker.Name} took too long.");
+            SwapRoles();
+            CurrentRound.Clear();
+
+        }
+
     }
 }

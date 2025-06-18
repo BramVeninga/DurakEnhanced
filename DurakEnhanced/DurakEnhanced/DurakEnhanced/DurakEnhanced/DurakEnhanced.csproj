@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,6 +67,12 @@
     <Compile Include="Controls\CreateGameControl.Designer.cs">
       <DependentUpon>CreateGameControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\IngamePopupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IngamePopupControl.Designer.cs">
+      <DependentUpon>IngamePopupControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\JoinableGamesListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,12 +109,32 @@
     <Compile Include="Controls\WaitingScreenControl.Designer.cs">
       <DependentUpon>WaitingScreenControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ActionCardsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActionCardsForm.Designer.cs">
+      <DependentUpon>ActionCardsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopupMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopupMenuForm.Designer.cs">
+      <DependentUpon>PopupMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RulesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RulesForm.Designer.cs">
+      <DependentUpon>RulesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="gameLogic\ActionCard.cs" />
     <Compile Include="gameLogic\Card.cs" />
     <Compile Include="gameLogic\DurakRules.cs" />
     <Compile Include="gameLogic\GameEngine.cs" />
     <Compile Include="gameLogic\GameState.cs" />
     <Compile Include="gameLogic\Player.cs" />
+    <Compile Include="Helpers\CardSelectorHelper.cs" />
+    <Compile Include="Helpers\PopupAnimator.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +146,12 @@
     <Compile Include="Networking\TcpServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\InputValidator.cs" />
     <EmbeddedResource Include="Controls\CreateGameControl.resx">
       <DependentUpon>CreateGameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IngamePopupControl.resx">
+      <DependentUpon>IngamePopupControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\JoinableGamesListControl.resx">
       <DependentUpon>JoinableGamesListControl.cs</DependentUpon>
@@ -125,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WaitingScreenControl.resx">
       <DependentUpon>WaitingScreenControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopupMenuForm.resx">
+      <DependentUpon>PopupMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -159,7 +207,16 @@
     <None Include="Resources\ESCButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Clovers_2_white.png" />

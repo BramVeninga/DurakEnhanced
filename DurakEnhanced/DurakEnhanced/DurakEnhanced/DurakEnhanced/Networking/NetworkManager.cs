@@ -121,5 +121,21 @@ namespace DurakEnhanced.Networking
 
             Server = null;
         }
+
+        public void ConnectToServer(string ip, int port)
+        {
+            try
+            {
+                Client = new TcpClient();
+                Client.Connect(IPAddress.Parse(ip), port);
+
+                BeginReceive(Client); // berichten ontvangen van host
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to connect: " + ex.Message);
+                throw; // doorgeven aan UI als er iets foutgaat
+            }
+        }
     }
 }

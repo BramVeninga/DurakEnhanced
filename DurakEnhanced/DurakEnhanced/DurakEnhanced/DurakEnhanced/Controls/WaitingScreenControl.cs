@@ -27,7 +27,7 @@ namespace DurakEnhanced.Controls
 
         private void play_Click(object sender, EventArgs e)
         {
-            mainForm.LoadScreen(new PlaygroundControl(mainForm));
+            mainForm.LoadScreen(new PlaygroundControl(mainForm, networkManager));
         }
 
         public void SetConnectionInfo(string ip, int port)

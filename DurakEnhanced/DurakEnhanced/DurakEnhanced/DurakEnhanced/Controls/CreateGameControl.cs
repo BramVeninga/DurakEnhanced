@@ -60,8 +60,8 @@ namespace DurakEnhanced.Controls
                 string ip = GetLocalIPAddress();
                 int usedPort = GetPortFromListener(networkManager.Server);
 
-                var waitingScreen = new WaitingScreenControl(mainForm);
-                waitingScreen.SetStatus($"Server started.\nWaiting for player...\n\nIP: {ip}\nPort: {usedPort}");
+                var waitingScreen = new WaitingScreenControl(mainForm, networkManager);
+                waitingScreen.SetConnectionInfo(ip, usedPort);
 
                 mainForm.LoadScreen(waitingScreen);
             }

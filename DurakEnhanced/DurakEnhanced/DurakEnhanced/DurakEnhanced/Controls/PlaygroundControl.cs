@@ -2,6 +2,7 @@
 using DurakEnhanced.gameLogic;
 using DurakEnhanced.GameLogic;
 using DurakEnhanced.Helpers;
+using DurakEnhanced.Networking;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,7 +13,8 @@ namespace DurakEnhanced.Controls
     public partial class PlaygroundControl : UserControl
     {
         private MainForm mainForm;
-        private const int CardLiftOffset = 20;
+        private NetworkManager networkManager;
+        private Button selectedCard = null;
         private IngamePopupControl popupMenu;
         private PopupAnimator popupAnimator;
         private GameEngine gameEngine;
@@ -20,12 +22,14 @@ namespace DurakEnhanced.Controls
         private FlowLayoutPanel opponentCardPanel;
         private FlowLayoutPanel battlefieldPanel;
 
-
-
-        public PlaygroundControl(MainForm mainForm)
+        public PlaygroundControl(MainForm mainForm, NetworkManager networkManager)
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            this.networkManager = networkManager;
+
+            // Koppel event handler voor inkomende berichten
+            this.networkManager.MessageReceived += NetworkManager_MessageReceived;
         }
 
         private void PlaygroundControl_Load(object sender, EventArgs e)
@@ -60,13 +64,28 @@ namespace DurakEnhanced.Controls
             popupAnimator = new PopupAnimator(popupMenu);
             popupMenu.OnLeaveGameRequested = () =>
             {
+                networkManager?.StopServer(); // Sluit eventuele server netjes af
                 mainForm.LoadScreen(new MainMenuControl(mainForm));
             };
         }
 
-        private void ExitButton_Click(object sender, EventArgs e) =>
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            networkManager?.StopServer(); // Sluit netjes af bij exit
             mainForm.LoadScreen(new MainMenuControl(mainForm));
+        }
 
+        private void NetworkManager_MessageReceived(string message)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => NetworkManager_MessageReceived(message)));
+                return;
+            }
+
+            // Placeholder for future multiplayer message handling
+            MessageBox.Show("Message received: " + message);
+        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape)
@@ -185,7 +204,7 @@ namespace DurakEnhanced.Controls
 
         private void AdjustCardPanelHeight()
         {
-            int maxCardHeight = 199 + CardLiftOffset;
+            int maxCardHeight = 199;
             cardPanel.Size = new Size(this.ClientSize.Width, maxCardHeight);
         }
 

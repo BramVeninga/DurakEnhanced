@@ -86,6 +86,23 @@ namespace DurakEnhanced.Networking
             stream.Write(data, 0, data.Length);
         }
 
+        public void SendToClient(string message) // required to send messages as host
+        {
+            if (Clients.Count == 0) return;
+
+            try
+            {
+                var client = Clients[0]; 
+                var stream = client.GetStream();
+                byte[] data = Encoding.UTF8.GetBytes(message);
+                stream.Write(data, 0, data.Length);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to send to client: " + ex.Message);
+            }
+        }
+
         public string GetLocalIPAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
@@ -129,7 +146,8 @@ namespace DurakEnhanced.Networking
                 Client = new TcpClient();
                 Client.Connect(IPAddress.Parse(ip), port);
 
-                BeginReceive(Client); // berichten ontvangen van host
+                BeginReceive(Client);
+                SendMessage("ClientConnected");
             }
             catch (Exception ex)
             {

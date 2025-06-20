@@ -3,9 +3,11 @@ using DurakEnhanced.gameLogic;
 using DurakEnhanced.GameLogic;
 using DurakEnhanced.Helpers;
 using DurakEnhanced.Networking;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DurakEnhanced.Controls
@@ -14,28 +16,40 @@ namespace DurakEnhanced.Controls
     {
         private MainForm mainForm;
         private NetworkManager networkManager;
-        private Button selectedCard = null;
         private IngamePopupControl popupMenu;
         private PopupAnimator popupAnimator;
         private GameEngine gameEngine;
         private FlowLayoutPanel cardPanel;
         private FlowLayoutPanel opponentCardPanel;
         private FlowLayoutPanel battlefieldPanel;
+        private readonly bool isHost;
+        private Suit trumpSuit;
+        private List<Card> localHand = new List<Card>();
+        private List<Card> opponentHand;
+        private bool isClientTurn;
+        private GameState gameState;
 
-        public PlaygroundControl(MainForm mainForm, NetworkManager networkManager)
+        public PlaygroundControl(MainForm mainForm, NetworkManager networkManager, bool isHost)
         {
             InitializeComponent();
             this.mainForm = mainForm;
             this.networkManager = networkManager;
+            this.isHost = isHost;
 
-            // Koppel event handler voor inkomende berichten
-            this.networkManager.MessageReceived += NetworkManager_MessageReceived;
+            if (isHost)
+            {
+                InitializeGame(); // Only the host initializes the full game logic
+                this.networkManager.MessageReceived += NetworkManager_MessageReceived;
+            }
+            else
+            {
+                this.networkManager.MessageReceived += NetworkManager_MessageReceived;
+            }
         }
 
         private void PlaygroundControl_Load(object sender, EventArgs e)
         {
             this.Padding = new Padding(0, 0, 0, 80);
-            InitializeGame();
             SetupCardPanels();
             CenterGameImage();
 
@@ -44,27 +58,33 @@ namespace DurakEnhanced.Controls
                 CenterCardPanel();
                 AdjustCardPanelHeight();
 
-                // Reposition and redraw player cards after resize
-                this.BeginInvoke(new Action(() =>
+                if (isHost && gameEngine != null)
                 {
-                    DisplayPlayerHand(gameEngine.Host.Hand);
-                }));
+                    this.BeginInvoke(new Action(() =>
+                    {
+                        DisplayPlayerHand(gameEngine.Host.Hand);
+                    }));
+                }
             };
 
             this.Resize += (s, evt2) => CenterGameImage();
             this.Resize += (s, evt3) => CenterOpponentCards();
 
-            DisplayPlayerHand(gameEngine.Host.Hand);
-            UpdateOpponentCards(gameEngine.CurrentDefender.Hand);
-            SetupBattlefieldSlots();
+            if (isHost && gameEngine != null)
+            {
+                DisplayPlayerHand(gameEngine.Host.Hand);
+                UpdateOpponentCards(gameEngine.CurrentDefender.Hand);
+                SetupBattlefieldSlots();
+            }
 
             popupMenu = new IngamePopupControl { Visible = false };
             this.Controls.Add(popupMenu);
             this.Controls.SetChildIndex(popupMenu, 0);
+
             popupAnimator = new PopupAnimator(popupMenu);
             popupMenu.OnLeaveGameRequested = () =>
             {
-                networkManager?.StopServer(); // Sluit eventuele server netjes af
+                networkManager?.StopServer();
                 mainForm.LoadScreen(new MainMenuControl(mainForm));
             };
         }
@@ -83,9 +103,17 @@ namespace DurakEnhanced.Controls
                 return;
             }
 
-            // Placeholder for future multiplayer message handling
-            MessageBox.Show("Message received: " + message);
+            if (message.StartsWith("InitGame|"))
+            {
+                string json = message.Substring("InitGame|".Length);
+                InitializeGameForClient(json); 
+            }
+            else
+            {
+                Console.WriteLine("[Received] " + message);
+            }
         }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape)
@@ -112,9 +140,58 @@ namespace DurakEnhanced.Controls
             gameEngine = new GameEngine { Host = host, Guest = guest };
             gameEngine.StartGame();
 
+            var gameData = new
+            {
+                HostHand = gameEngine.Host.Hand,
+                GuestHand = gameEngine.Guest.Hand,
+                TrumpSuit = gameEngine.TrumpSuit.ToString(),
+                FirstAttacker = gameEngine.CurrentAttacker.Name
+            };
+
+            string json = JsonConvert.SerializeObject(gameData);
+            networkManager.SendToClient("InitGame|" + json);
+
             Console.WriteLine("Game started. Trump: " + gameEngine.TrumpSuit);
             Console.WriteLine("Host cards: " + string.Join(", ", host.Hand));
             Console.WriteLine("Guest cards: " + string.Join(", ", guest.Hand));
+        }
+
+        private void InitializeGameForClient(string json)
+        {
+            try
+            {
+                var gameData = JsonConvert.DeserializeObject<dynamic>(json);
+
+                var hostHand = JsonConvert.DeserializeObject<List<Card>>(gameData.HostHand.ToString());
+                var guestHand = JsonConvert.DeserializeObject<List<Card>>(gameData.GuestHand.ToString());
+                var trumpSuit = (Suit)Enum.Parse(typeof(Suit), gameData.TrumpSuit.ToString());
+                string firstAttacker = gameData.FirstAttacker.ToString();
+
+                this.trumpSuit = trumpSuit;
+                this.localHand = guestHand;
+                this.opponentHand = hostHand;
+                this.isClientTurn = (firstAttacker == "Guest");
+
+                DisplayPlayerHand(localHand);
+                UpdateOpponentCards(opponentHand);
+                SetupBattlefieldSlots();
+
+               
+                Console.WriteLine("==== Game Data Received from Host ====");
+                Console.WriteLine("Trump Suit: " + trumpSuit);
+                Console.WriteLine("First Attacker: " + firstAttacker);
+                Console.WriteLine("Guest (My) Hand:");
+                foreach (var card in guestHand)
+                    Console.WriteLine($"- {card}");
+
+                Console.WriteLine("Host (Opponent) Card Count: " + hostHand.Count);
+                Console.WriteLine("======================================");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to initialize game on client:\n" + ex.Message);
+            }
         }
 
         private void SetupCardPanels()

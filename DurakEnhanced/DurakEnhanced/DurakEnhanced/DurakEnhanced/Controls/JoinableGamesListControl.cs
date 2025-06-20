@@ -1,20 +1,22 @@
 ﻿using DurakEnhanced.Forms;
+using DurakEnhanced.gameLogic;
+using DurakEnhanced.Networking;
+using Newtonsoft.Json;
 using System;
 using System.Windows.Forms;
-using DurakEnhanced.Networking;
 
 namespace DurakEnhanced.Controls
 {
     public partial class JoinableGamesListControl : UserControl
     {
         private MainForm mainForm;
-        private NetworkManager networkmanager;
+        private NetworkManager networkManager;
 
         public JoinableGamesListControl(MainForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
-            this.networkmanager = new NetworkManager();
+            this.networkManager = new NetworkManager();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,10 +43,16 @@ namespace DurakEnhanced.Controls
                 return;
             }
 
-            // Hier zou normaal je connectielogica komen
-            // Bijvoorbeeld: networkManager.ConnectToServer(ip, port);
-
-            mainForm.LoadScreen(new PlaygroundControl(mainForm, networkmanager));
+            try
+            {
+                networkManager.ConnectToServer(ip, port);
+                // Just load the PlaygroundControl directly
+                mainForm.LoadScreen(new PlaygroundControl(mainForm, networkManager, isHost: false));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to connect to server:\n" + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

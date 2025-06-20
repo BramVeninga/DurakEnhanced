@@ -8,6 +8,9 @@ Within the TCP there are 2 roles, a host and a guest.
 The connection process is pretty self explanitory. When a host starts a game, he is met with a waiting screen where his connection details are shown.
 When a guest wishes to enter a game he or she needs to enter the host' connection details.
 The connection details consist of an IP and a port.
+
+In order to boot up the project, please use the latest version of visual studio and open the durakenhanced.sln file in order to open the project correctly.
+You can encounter this .sln file by traversing the durakenhanced folder. If you see projectstructure as stated at the bottom of this readme, you've gone 1 level to deep, the .sln file for booting the project is one level higher.
 ---
 
 ## 📦 Features

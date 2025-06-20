@@ -1,0 +1,36 @@
+# Visual Studio specifieke bestanden
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output
+bin/
+obj/
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Rider
+.idea/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+
+# OS-specifiek
+Thumbs.db
+.DS_Store
+
+# Andere tijdelijke bestanden
+*.tmp
+*.temp

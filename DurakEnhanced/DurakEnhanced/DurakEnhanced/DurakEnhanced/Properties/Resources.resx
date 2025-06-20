@@ -154,4 +154,142 @@
   <data name="Rectangle 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Hearts_3_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_3_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_4_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_4_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_Queen_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_Queen_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_Jack_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_Jack_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_A_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_A_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_9_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_9_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_8_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_8_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_7_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_7_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_6_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_6_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_5_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_5_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_4_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_4_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_3_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_3_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_2_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_2_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiles_10_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiles_10_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_Queen_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_Queen_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_King_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_King_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_A_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_A_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_9_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_9_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_8_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_8_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_7_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_7_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_6_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_6_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_5_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_5_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_4_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_4_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_3_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_3_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_2_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_2_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pikes_10_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pikes_10_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_King_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_King_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_Jack_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_Jack_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_A_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_A_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_8_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_8_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_9_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_9_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_10_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_10_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_2_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_2_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_7_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_7_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_Queen_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_Queen_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_King_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_King_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_A_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_A_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_9_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_9_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_8_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_8_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_7_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_7_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_6_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_6_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_5_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_5_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_4_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_4_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_3_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_3_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clovers_10_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clovers_10_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_6_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_6_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6BAC0557-CD3B-4C56-B804-F5936CA258D9}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>DurakEnhanced</RootNamespace>
     <AssemblyName>DurakEnhanced</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -46,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -133,7 +136,8 @@
     <Compile Include="gameLogic\GameEngine.cs" />
     <Compile Include="gameLogic\GameState.cs" />
     <Compile Include="gameLogic\Player.cs" />
-    <Compile Include="Helpers\CardSelectorHelper.cs" />
+    <Compile Include="Helpers\BattleFieldSlot.cs" />
+    <Compile Include="Helpers\CardUIHelper.cs" />
     <Compile Include="Helpers\PopupAnimator.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -245,6 +249,56 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Rectangle 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Clovers_10_white.png" />
+    <Content Include="Resources\Clovers_3_white.png" />
+    <Content Include="Resources\Clovers_4_white.png" />
+    <Content Include="Resources\Clovers_5_white.png" />
+    <Content Include="Resources\Clovers_6_white.png" />
+    <Content Include="Resources\Clovers_7_white.png" />
+    <Content Include="Resources\Clovers_8_white.png" />
+    <Content Include="Resources\Clovers_9_white.png" />
+    <Content Include="Resources\Clovers_A_white.png" />
+    <Content Include="Resources\Clovers_King_white.png" />
+    <Content Include="Resources\Clovers_Queen_white.png" />
+    <Content Include="Resources\Hearts_10_white.png" />
+    <Content Include="Resources\Hearts_2_white.png" />
+    <Content Include="Resources\Hearts_3_white.png" />
+    <Content Include="Resources\Hearts_4_white.png" />
+    <Content Include="Resources\Hearts_6_white.png" />
+    <Content Include="Resources\Hearts_7_white.png" />
+    <Content Include="Resources\Hearts_8_white.png" />
+    <Content Include="Resources\Hearts_9_white.png" />
+    <Content Include="Resources\Hearts_A_white.png" />
+    <Content Include="Resources\Hearts_Jack_white.png" />
+    <Content Include="Resources\Hearts_King_white.png" />
+    <Content Include="Resources\Heats_6_white.png" />
+    <Content Include="Resources\Pikes_10_white.png" />
+    <Content Include="Resources\Pikes_2_white.png" />
+    <Content Include="Resources\Pikes_3_white.png" />
+    <Content Include="Resources\Pikes_4_white.png" />
+    <Content Include="Resources\Pikes_5_white.png" />
+    <Content Include="Resources\Pikes_6_white.png" />
+    <Content Include="Resources\Pikes_7_white.png" />
+    <Content Include="Resources\Pikes_8_white.png" />
+    <Content Include="Resources\Pikes_9_white.png" />
+    <Content Include="Resources\Pikes_A_white.png" />
+    <Content Include="Resources\Pikes_King_white.png" />
+    <Content Include="Resources\Pikes_Queen_white.png" />
+    <Content Include="Resources\Rectangle 2.png" />
+    <Content Include="Resources\Tiles_10_white.png" />
+    <Content Include="Resources\Tiles_2_white.png" />
+    <Content Include="Resources\Tiles_3_white.png" />
+    <Content Include="Resources\Tiles_4_white.png" />
+    <Content Include="Resources\Tiles_5_white.png" />
+    <Content Include="Resources\Tiles_6_white.png" />
+    <Content Include="Resources\Tiles_7_white.png" />
+    <Content Include="Resources\Tiles_8_white.png" />
+    <Content Include="Resources\Tiles_9_white.png" />
+    <Content Include="Resources\Tiles_A_white.png" />
+    <Content Include="Resources\Tiles_Jack_white.png" />
+    <Content Include="Resources\Tiles_Queen_white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

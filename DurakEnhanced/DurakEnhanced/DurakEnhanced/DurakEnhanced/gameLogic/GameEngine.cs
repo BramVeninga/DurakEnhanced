@@ -128,27 +128,50 @@ namespace DurakEnhanced.GameLogic
 
         public bool Defend(Card attackCard, Card defendCard)
         {
-            if (!CurrentDefender.Hand.Contains(defendCard))
+            Console.WriteLine($"[Defend] Attempting to defend {attackCard} with {defendCard}");
+
+            if (!CurrentDefender.Hand.Any(c => c.Rank == defendCard.Rank && c.Suit == defendCard.Suit))
+            {
+                Console.WriteLine("[Defend] Failed: Defend card not found in defender's hand.");
                 return false;
+            }
 
             if (!DurakRules.Beats(defendCard, attackCard, TrumpSuit))
+            {
+                Console.WriteLine("[Defend] Failed: Defend card does not beat attack card.");
                 return false;
+            }
 
             int index = -1;
             for (int i = 0; i < CurrentRound.Count; i++)
             {
-                if (CurrentRound[i].Item1 == attackCard && CurrentRound[i].Item2 == null)
+                if (CurrentRound[i].Item1.Rank == attackCard.Rank && CurrentRound[i].Item1.Suit == attackCard.Suit && CurrentRound[i].Item2 == null)
                 {
                     index = i;
                     break;
                 }
             }
+
             if (index == -1)
+            {
+                Console.WriteLine("[Defend] Failed: Matching attack card not found in current round.");
                 return false;
+            }
 
             moveTimer?.Stop();
             CurrentRound[index] = new Tuple<Card, Card>(attackCard, defendCard);
-            CurrentDefender.Hand.Remove(defendCard);
+
+            var toRemove = CurrentDefender.Hand.FirstOrDefault(c => c.Rank == defendCard.Rank && c.Suit == defendCard.Suit);
+            if (toRemove != null)
+            {
+                CurrentDefender.Hand.Remove(toRemove);
+                Console.WriteLine("[Defend] Success: Card removed from hand and defense registered.");
+            }
+            else
+            {
+                Console.WriteLine("[Defend] Unexpected: Card matched earlier but not found now.");
+            }
+
             return true;
         }
 

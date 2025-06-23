@@ -613,7 +613,7 @@ namespace DurakEnhanced.Controls
             {
                 Size = new Size(135, 199),
                 AllowDrop = true,
-                BorderStyle = BorderStyle.FixedSingle,
+                BorderStyle = BorderStyle.None,
                 Margin = new Padding(10)
             };
 

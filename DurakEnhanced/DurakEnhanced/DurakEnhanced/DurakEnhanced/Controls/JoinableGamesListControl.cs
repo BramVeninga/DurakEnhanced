@@ -54,5 +54,10 @@ namespace DurakEnhanced.Controls
                 MessageBox.Show("Failed to connect to server:\n" + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void portLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

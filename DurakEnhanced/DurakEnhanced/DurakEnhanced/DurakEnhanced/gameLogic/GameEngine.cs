@@ -29,7 +29,7 @@ namespace DurakEnhanced.GameLogic
 
         private Timer moveTimer;
 
-        private const int MoveTimeoutMilliseconds = 120000; // 120 seconds
+        private const int MoveTimeoutMilliseconds = 120000; // 120 seconds`
 
 
         public void StartGame()

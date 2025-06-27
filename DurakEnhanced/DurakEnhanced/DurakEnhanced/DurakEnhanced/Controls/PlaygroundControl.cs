@@ -1,5 +1,6 @@
 ﻿using DurakEnhanced;
 using DurakEnhanced.Forms;
+using DurakEnhanced.GameLogic;
 using DurakEnhanced.gameLogic;
 using DurakEnhanced.gameLogic.ActionCards;
 using DurakEnhanced.gameLogic.ActionCards.Tier1;
@@ -53,17 +54,12 @@ namespace DurakEnhanced.Controls
             {
                 this.networkManager.MessageReceived += NetworkManager_MessageReceived;
             }
-        }
+        
 
             var trollCard = new TrollCard1(this);
             actionCards.Add(trollCard);
-            actionCards.Add(new TrollCard2(cardButtons));
-            actionCards.Add(new TrollCard3(this, cardButtons));
             var backImage = Properties.Resources.backofcard;
-            var slot2Box = pictureBox3; // Assuming slot 2 is pictureBox3
             var revealedCard = Properties.Resources.Hearts_5_white;
-
-            actionCards.Add(new Tier1Card1(slot2Box, revealedCard, backImage));
         }
 
         private void PlaygroundControl_Load(object sender, EventArgs e)

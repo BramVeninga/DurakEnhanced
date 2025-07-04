@@ -1,97 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading;
+using WebSocketSharp;
+using WebSocketSharp.Server;
 
 namespace DurakEnhanced.Networking
 {
     public class NetworkManager
     {
-        public TcpListener Server { get; private set; }
-        public TcpClient Client { get; private set; }
-
-        private readonly List<TcpClient> Clients = new List<TcpClient>();
+        private WebSocketClientHandler client;
+        private WebSocketServer server;
 
         public event Action<string> MessageReceived;
 
         public void StartServer(int port)
         {
-            Server = new TcpListener(IPAddress.Any, port);
-            Server.Start();
-            Server.BeginAcceptTcpClient(HandleClientConnected, null);
+            WebSocketServerHandler.OnMessageReceived += (msg) =>
+            {
+                MessageReceived?.Invoke(msg);
+            };
+
+            WebSocketServerHandler.Start(port);
         }
 
-        private void HandleClientConnected(IAsyncResult result)
+        public void StopServer()
         {
-            try
-            {
-                if (Server == null)
-                {
-                    return;
-                }
-
-                TcpClient client = Server.EndAcceptTcpClient(result);
-                Clients.Add(client);
-                BeginReceive(client);
-
-                Server.BeginAcceptTcpClient(HandleClientConnected, null);
-            }
-            catch (ObjectDisposedException)
-            {
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error accepting client: " + ex.Message);
-            }
+            WebSocketServerHandler.Stop();
         }
 
-        private void BeginReceive(TcpClient client)
+        public void ConnectToServer(string ip, int port)
         {
-            ThreadPool.QueueUserWorkItem(_ =>
-            {
-                try
-                {
-                    var stream = client.GetStream();
-                    byte[] buffer = new byte[1024];
+            client = new WebSocketClientHandler();
+            client.OnMessageReceived += (msg) => MessageReceived?.Invoke(msg);
 
-                    while (true)
-                    {
-                        int bytesRead = stream.Read(buffer, 0, buffer.Length);
-                        if (bytesRead == 0) break;
+            // WebSocketSharp expects full URL
+            client.Connect($"ws://{ip}:{port}/game");
 
-                        string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                        MessageReceived?.Invoke(message);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Receive error: " + ex.Message);
-                }
-                finally
-                {
-                    client.Close();
-                    Clients.Remove(client);
-                }
-            });
+            client.Send("ClientConnected");
         }
 
         public void SendMessage(string message)
         {
-            if (Client == null) return;
+            client?.Send(message);
+        }
 
-            var stream = Client.GetStream();
-            byte[] data = Encoding.UTF8.GetBytes(message);
-            stream.Write(data, 0, data.Length);
+        public void SendToClient(string message)
+        {
+            WebSocketServerHandler.SendToAllClients(message);
         }
 
         public string GetLocalIPAddress()
         {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
+            var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
             foreach (var ip in host.AddressList)
             {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
                 {
                     return ip.ToString();
                 }
@@ -101,40 +62,14 @@ namespace DurakEnhanced.Networking
 
         public int GetPort()
         {
-            if (Server?.LocalEndpoint is IPEndPoint endPoint)
+            if (server != null)
             {
-                return endPoint.Port;
+                return server.Port;
             }
-            return -1;
-        }
-
-        public void StopServer()
-        {
-            foreach (var client in Clients)
+            else
             {
-                try { client.Close(); } catch { }
-            }
-
-            Clients.Clear();
-
-            try { Server?.Stop(); } catch { }
-
-            Server = null;
-        }
-
-        public void ConnectToServer(string ip, int port)
-        {
-            try
-            {
-                Client = new TcpClient();
-                Client.Connect(IPAddress.Parse(ip), port);
-
-                BeginReceive(Client); // berichten ontvangen van host
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Failed to connect: " + ex.Message);
-                throw; // doorgeven aan UI als er iets foutgaat
+                // Try to get port from WebSocketServerHandler if available
+                return WebSocketServerHandler.CurrentPort;
             }
         }
     }

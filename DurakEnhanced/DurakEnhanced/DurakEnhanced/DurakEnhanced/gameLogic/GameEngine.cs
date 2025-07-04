@@ -29,7 +29,7 @@ namespace DurakEnhanced.GameLogic
 
         private Timer moveTimer;
 
-        private const int MoveTimeoutMilliseconds = 60000; // 60 seconds
+        private const int MoveTimeoutMilliseconds = 120000; // 120 seconds`
 
 
         public void StartGame()
@@ -106,7 +106,10 @@ namespace DurakEnhanced.GameLogic
 
         public bool Attack(Card card)
         {
-            if (!Host.Hand.Contains(card) && !Guest.Hand.Contains(card))
+            bool existsInHost = Host.Hand.Any(c => c.Rank == card.Rank && c.Suit == card.Suit);
+            bool existsInGuest = Guest.Hand.Any(c => c.Rank == card.Rank && c.Suit == card.Suit);
+
+            if (!existsInHost && !existsInGuest)
                 return false;
 
             List<Card> allCards = new List<Card>();
@@ -128,27 +131,53 @@ namespace DurakEnhanced.GameLogic
 
         public bool Defend(Card attackCard, Card defendCard)
         {
-            if (!CurrentDefender.Hand.Contains(defendCard))
+            Console.WriteLine($"[Defend] Attempting to defend {attackCard} with {defendCard}");
+
+            bool existsInHost = Host.Hand.Any(c => c.Rank == defendCard.Rank && c.Suit == defendCard.Suit);
+            bool existsInGuest = Guest.Hand.Any(c => c.Rank == defendCard.Rank && c.Suit == defendCard.Suit);
+
+            if (!existsInHost && !existsInGuest)
+            {
+                Console.WriteLine("[Defend] Failed: Defend card not found in either player's hand.");
                 return false;
+            }
 
             if (!DurakRules.Beats(defendCard, attackCard, TrumpSuit))
+            {
+                Console.WriteLine("[Defend] Failed: Defend card does not beat attack card.");
                 return false;
+            }
 
             int index = -1;
             for (int i = 0; i < CurrentRound.Count; i++)
             {
-                if (CurrentRound[i].Item1 == attackCard && CurrentRound[i].Item2 == null)
+                if (CurrentRound[i].Item1.Rank == attackCard.Rank && CurrentRound[i].Item1.Suit == attackCard.Suit && CurrentRound[i].Item2 == null)
                 {
                     index = i;
                     break;
                 }
             }
+
             if (index == -1)
+            {
+                Console.WriteLine("[Defend] Failed: Matching attack card not found in current round.");
                 return false;
+            }
 
             moveTimer?.Stop();
             CurrentRound[index] = new Tuple<Card, Card>(attackCard, defendCard);
-            CurrentDefender.Hand.Remove(defendCard);
+
+            var toRemove = CurrentDefender.Hand.FirstOrDefault(c => c.Rank == defendCard.Rank && c.Suit == defendCard.Suit);
+            if (toRemove != null)
+            {
+                CurrentDefender.Hand.Remove(toRemove);
+                Console.WriteLine("[Defend] Success: Card removed from hand and defense registered.");
+            }
+            else
+            {
+                Console.WriteLine("[Defend] Unexpected: Card matched earlier but not found now.");
+            }
+
             return true;
         }
 

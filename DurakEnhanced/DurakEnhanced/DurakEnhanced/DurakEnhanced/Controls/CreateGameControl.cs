@@ -58,7 +58,7 @@ namespace DurakEnhanced.Controls
                 networkManager.StartServer(port);
 
                 string ip = GetLocalIPAddress();
-                int usedPort = GetPortFromListener(networkManager.Server);
+                int usedPort = networkManager.GetPort();
 
                 var waitingScreen = new WaitingScreenControl(mainForm, networkManager);
                 waitingScreen.SetConnectionInfo(ip, usedPort);
@@ -82,11 +82,6 @@ namespace DurakEnhanced.Controls
             var host = Dns.GetHostEntry(Dns.GetHostName());
             var ip = host.AddressList.FirstOrDefault(a => a.AddressFamily == AddressFamily.InterNetwork);
             return ip?.ToString() ?? "127.0.0.1";
-        }
-
-        private int GetPortFromListener(TcpListener listener)
-        {
-            return ((IPEndPoint)listener.LocalEndpoint).Port;
         }
     }
 }

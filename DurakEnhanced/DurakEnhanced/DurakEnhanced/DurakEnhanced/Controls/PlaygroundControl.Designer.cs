@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlaygroundControl));
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rollResultLabel = new System.Windows.Forms.Label();
+            this.btnEndTurn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,17 +52,40 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(478, 252);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(385, 385);
+            this.pictureBox1.Size = new System.Drawing.Size(297, 286);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // rollResultLabel
+            // 
+            this.rollResultLabel.AutoSize = true;
+            this.rollResultLabel.Location = new System.Drawing.Point(1117, 355);
+            this.rollResultLabel.Name = "rollResultLabel";
+            this.rollResultLabel.Size = new System.Drawing.Size(55, 13);
+            this.rollResultLabel.TabIndex = 14;
+            this.rollResultLabel.Text = "RollResult";
+            this.rollResultLabel.Click += new System.EventHandler(this.rollResultLabel_Click);
+            // 
+            // btnEndTurn
+            // 
+            this.btnEndTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEndTurn.Location = new System.Drawing.Point(3, 542);
+            this.btnEndTurn.Name = "btnEndTurn";
+            this.btnEndTurn.Size = new System.Drawing.Size(192, 56);
+            this.btnEndTurn.TabIndex = 16;
+            this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.Click += new System.EventHandler(this.endTurnButton_Click);
             // 
             // PlaygroundControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(236)))), ((int)(((byte)(212)))));
+            this.Controls.Add(this.btnEndTurn);
+            this.Controls.Add(this.rollResultLabel);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox1);
             this.MinimumSize = new System.Drawing.Size(1400, 900);
@@ -70,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -77,5 +103,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label rollResultLabel;
+        private System.Windows.Forms.Button btnEndTurn;
     }
 }

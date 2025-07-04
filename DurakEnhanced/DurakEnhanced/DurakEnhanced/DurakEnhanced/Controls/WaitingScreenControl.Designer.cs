@@ -22,7 +22,6 @@
             this.labelConnectionInfo = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.GameLogo = new System.Windows.Forms.PictureBox();
-            this.play = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GameLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,24 +79,12 @@
             this.GameLogo.TabIndex = 16;
             this.GameLogo.TabStop = false;
             // 
-            // play
-            // 
-            this.play.Location = new System.Drawing.Point(1558, 448);
-            this.play.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.play.Name = "play";
-            this.play.Size = new System.Drawing.Size(112, 35);
-            this.play.TabIndex = 19;
-            this.play.Text = "play";
-            this.play.UseVisualStyleBackColor = true;
-            this.play.Click += new System.EventHandler(this.play_Click);
-            // 
             // WaitingScreenControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(236)))), ((int)(((byte)(212)))));
             this.Controls.Add(this.labelConnectionInfo);
-            this.Controls.Add(this.play);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GameLogo);
@@ -116,6 +103,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelConnectionInfo;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.Button play;
     }
 }

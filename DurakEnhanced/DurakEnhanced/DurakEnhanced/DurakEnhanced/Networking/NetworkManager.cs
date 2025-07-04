@@ -13,18 +13,17 @@ namespace DurakEnhanced.Networking
 
         public void StartServer(int port)
         {
-            WebSocketServerHandler.OnServerMessageReceived += (msg) =>
+            WebSocketServerHandler.OnMessageReceived += (msg) =>
             {
                 MessageReceived?.Invoke(msg);
             };
 
-            server = WebSocketServerHandler.Start(port);
+            WebSocketServerHandler.Start(port);
         }
 
         public void StopServer()
         {
-            server?.Stop();
-            server = null;
+            WebSocketServerHandler.Stop();
         }
 
         public void ConnectToServer(string ip, int port)
@@ -45,8 +44,7 @@ namespace DurakEnhanced.Networking
 
         public void SendToClient(string message)
         {
-            // WebSocketSharp server pushes automatically to clients when called from WebSocketBehavior
-            // We'll need to adjust later if needed. Voor nu dummy.
+            WebSocketServerHandler.SendToAllClients(message);
         }
 
         public string GetLocalIPAddress()

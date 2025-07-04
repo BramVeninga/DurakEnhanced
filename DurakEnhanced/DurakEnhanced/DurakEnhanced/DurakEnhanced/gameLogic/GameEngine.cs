@@ -106,7 +106,10 @@ namespace DurakEnhanced.GameLogic
 
         public bool Attack(Card card)
         {
-            if (!Host.Hand.Contains(card) && !Guest.Hand.Contains(card))
+            bool existsInHost = Host.Hand.Any(c => c.Rank == card.Rank && c.Suit == card.Suit);
+            bool existsInGuest = Guest.Hand.Any(c => c.Rank == card.Rank && c.Suit == card.Suit);
+
+            if (!existsInHost && !existsInGuest)
                 return false;
 
             List<Card> allCards = new List<Card>();
@@ -130,9 +133,12 @@ namespace DurakEnhanced.GameLogic
         {
             Console.WriteLine($"[Defend] Attempting to defend {attackCard} with {defendCard}");
 
-            if (!CurrentDefender.Hand.Any(c => c.Rank == defendCard.Rank && c.Suit == defendCard.Suit))
+            bool existsInHost = Host.Hand.Any(c => c.Rank == defendCard.Rank && c.Suit == defendCard.Suit);
+            bool existsInGuest = Guest.Hand.Any(c => c.Rank == defendCard.Rank && c.Suit == defendCard.Suit);
+
+            if (!existsInHost && !existsInGuest)
             {
-                Console.WriteLine("[Defend] Failed: Defend card not found in defender's hand.");
+                Console.WriteLine("[Defend] Failed: Defend card not found in either player's hand.");
                 return false;
             }
 

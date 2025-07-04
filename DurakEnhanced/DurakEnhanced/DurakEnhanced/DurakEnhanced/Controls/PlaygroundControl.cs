@@ -33,7 +33,6 @@ namespace DurakEnhanced.Controls
         private List<Card> opponentHand;
         private bool isClientTurn;
         private GameState gameState;
-        private Button finishAttackButton;
         private IDiceRoller diceRoller = new DiceRoller();
         private DiceRollerControl diceRollerControl;
         private FlowLayoutPanel actionCardPanel;
@@ -49,12 +48,8 @@ namespace DurakEnhanced.Controls
             if (isHost)
             {
                 InitializeGame(); // Only the host initializes the full game logic
+                UpdateEndTurnButtonState();
             }
-            else
-            {
-                this.networkManager.MessageReceived += NetworkManager_MessageReceived;
-            }
-        
 
             var trollCard = new TrollCard1(this);
             actionCards.Add(trollCard);
@@ -114,25 +109,6 @@ namespace DurakEnhanced.Controls
                 SetupBattlefieldSlots();
             }
 
-            finishAttackButton = new Button
-            {
-                Text = "Finish Attack",
-                Visible = isHost, // Only attacker (host initially) sees it
-                AutoSize = true,
-                Location = new Point(10, this.Height - 50), // Adjust as needed
-                Anchor = AnchorStyles.Bottom | AnchorStyles.Left
-            };
-
-            finishAttackButton.Click += FinishAttackButton_Click;
-            this.Controls.Add(finishAttackButton);
-
-            Button takeCardsButton = new Button();
-            takeCardsButton.Text = "Take Cards";
-            takeCardsButton.Location = new Point(10, 10); // adjust position as needed
-            takeCardsButton.Click += TakeCardsButton_Click;
-            takeCardsButton.Visible = !isHost; // Only visible on client
-            Controls.Add(takeCardsButton);
-
             popupMenu = new IngamePopupControl { Visible = false };
             this.Controls.Add(popupMenu);
             this.Controls.SetChildIndex(popupMenu, 0);
@@ -155,60 +131,6 @@ namespace DurakEnhanced.Controls
             mainForm.LoadScreen(new MainMenuControl(mainForm));
         }
 
-        private void FinishAttackButton_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("[Host] Finish Attack button clicked.");
-
-            if (!isHost) return;
-            if (gameEngine.CurrentAttacker != gameEngine.Host) return;
-
-            bool allDefended = gameEngine.CurrentRound.All(pair => pair.Item2 != null);
-
-            if (allDefended)
-            {
-                gameEngine.EndRound();
-
-                string updatedGuestHandJson = JsonConvert.SerializeObject(gameEngine.Guest.Hand);
-                networkManager.SendToClient("UpdateHand|" + updatedGuestHandJson);
-
-                DisplayPlayerHand(gameEngine.Host.Hand);
-                UpdateOpponentCards(gameEngine.Guest.Hand);
-                SetupBattlefieldSlots();
-
-                isClientTurn = true;
-                networkManager.SendToClient("NextRound|");
-                Console.WriteLine("[Host] All cards defended. Proceeding to next round.");
-            }
-            else
-            {
-                MessageBox.Show("Some attacks are not defended yet!");
-                Console.WriteLine("[Host] Attack not fully defended.");
-            }
-        }
-
-        private void TakeCardsButton_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("[Client] Take Cards button clicked.");
-
-            foreach (Panel slot in battlefieldPanel.Controls)
-            {
-                foreach (Control cardControl in slot.Controls)
-                {
-                    if (cardControl.Tag is Card card)
-                    {
-                        localHand.Add(card);
-                    }
-                }
-                slot.Controls.Clear();
-            }
-
-            DisplayPlayerHand(localHand);
-
-            networkManager?.SendMessage("DefenderTookCards");
-            Console.WriteLine("[Client] Sent DefenderTookCards to host.");
-        }
-
-
 
         private void NetworkManager_MessageReceived(string message)
         {
@@ -226,6 +148,7 @@ namespace DurakEnhanced.Controls
                 Console.WriteLine("[Network] InitGame message received.");
                 string json = message.Substring("InitGame|".Length);
                 InitializeGameForClient(json);
+                UpdateEndTurnButtonState();
             }
             else if (message.StartsWith("PlayCard|"))
             {
@@ -274,15 +197,63 @@ namespace DurakEnhanced.Controls
                 if (action == "attack")
                 {
                     Console.WriteLine("[Network] Applying attack move visually.");
-                    slot.Controls.Clear();
-                    slot.Controls.Add(cardImage);
+                    bool attackSuccess = true;
 
-                    opponentHand.RemoveAll(c => c.Rank == rank && c.Suit == suit);
-                    UpdateOpponentCards(opponentHand);
+                    if (isHost)
+                    {
+                        // Register attack in host game logic
+                        attackSuccess = gameEngine.Attack(receivedCard);
+                        Console.WriteLine($"[Host] gameEngine.Attack() success: {attackSuccess}");
 
-                    isClientTurn = true;
-                    Console.WriteLine("[Network] Client's turn set to TRUE (can now defend).");
+                        if (attackSuccess)
+                        {
+                            networkManager?.SendToClient($"AttackConfirmed|{receivedCard.Rank}|{receivedCard.Suit}|{slotIndex}");
+                            //  Only update visuals if move is accepted
+                            cardImage.Tag = receivedCard;
+                            slot.Controls.Clear();
+                            slot.Controls.Add(cardImage);
+
+                            gameEngine.Guest.Hand.RemoveAll(c => c.Rank == rank && c.Suit == suit);
+                            UpdateOpponentCards(gameEngine.Guest.Hand);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid attack received from client.");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        // Client does not have local game engine, just wait for host validation
+                        // So we optimistically show card and remove it here only if host allows
+                        attackSuccess = true; // Still needed to skip visual if we change structure
+                        cardImage.Tag = receivedCard;
+                        slot.Controls.Clear();
+                        slot.Controls.Add(cardImage);
+
+                        opponentHand.RemoveAll(c => c.Rank == rank && c.Suit == suit);
+                        UpdateOpponentCards(opponentHand);
+
+                        var toRemove = localHand.FirstOrDefault(c => c.Rank == rank && c.Suit == suit);
+                        if (toRemove != null)
+                        {
+                            localHand.Remove(toRemove);
+                            DisplayPlayerHand(localHand); // Update hand UI
+                            Console.WriteLine("[Network] Removed attack card from local hand.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("[Network] Attack card not found in local hand.");
+                        }
+                    }
+
+                    if (attackSuccess)
+                    {
+                        isClientTurn = true;
+                        Console.WriteLine("[Network] Client's turn set to TRUE (can now defend).");
+                    }
                 }
+
                 else if (action == "defend")
                 {
                     Console.WriteLine("[Network] Applying defense move visually.");
@@ -318,7 +289,7 @@ namespace DurakEnhanced.Controls
                     slot.Controls.Add(defenseImage);
                     defenseImage.BringToFront();
 
-                    string confirmMsg = $"DefendConfirmed|{receivedCard.Rank}|{receivedCard.Suit}";
+                    string confirmMsg = $"DefendConfirmed|{receivedCard.Rank}|{receivedCard.Suit}|{slotIndex}";
                     networkManager?.SendToClient(confirmMsg);
                     Console.WriteLine("[Network] Sent DefendConfirmed message to client.");
 
@@ -337,31 +308,125 @@ namespace DurakEnhanced.Controls
             {
                 Console.WriteLine("[Network] DefendConfirmed message received.");
                 string[] parts = message.Split('|');
-                if (parts.Length != 3)
+                if (parts.Length != 4)
                 {
                     Console.WriteLine("[Network] Invalid DefendConfirmed format.");
                     return;
                 }
 
-                string rankStr = parts[1];
-                string suitStr = parts[2];
-
-                if (Enum.TryParse(rankStr, out Rank rank) && Enum.TryParse(suitStr, out Suit suit))
+                if (Enum.TryParse(parts[1], out Rank rank) &&
+                    Enum.TryParse(parts[2], out Suit suit) &&
+                    int.TryParse(parts[3], out int slotIndex))
                 {
                     var toRemove = localHand.FirstOrDefault(c => c.Rank == rank && c.Suit == suit);
                     if (toRemove != null)
                     {
-                        Console.WriteLine("[Network] Removing confirmed defender card from hand.");
                         localHand.Remove(toRemove);
                         DisplayPlayerHand(localHand);
+                        Console.WriteLine("[Network] Removed defended card from local hand.");
                     }
 
-                }
+                    // Add defense card visually
+                    var slot = battlefieldPanel.Controls[slotIndex] as Panel;
+                    if (slot != null && slot.Controls.Count > 0)
+                    {
+                        var defenseCard = new Card(suit, rank);
+                        var defenseImage = CardUIHelper.CreateCardImageOnly(defenseCard);
+                        defenseImage.Tag = defenseCard;
 
+                        // Offset: slight shift right and down from the attack card
+                        var baseLocation = slot.Controls[0].Location;
+                        defenseImage.Location = new Point(baseLocation.X + 20, baseLocation.Y + 30);
+                        slot.Controls.Add(defenseImage);
+                        defenseImage.BringToFront();
+
+                        Console.WriteLine("[Client] Defense card displayed visually.");
+                    }
+                }
                 else
                 {
-                    Console.WriteLine("[Network] Failed to parse rank or suit in DefendConfirmed.");
+                    Console.WriteLine("[Network] Failed to parse DefendConfirmed values.");
                 }
+            }
+            else if (message.StartsWith("AttackConfirmed|"))
+            {
+                Console.WriteLine("[Network] AttackConfirmed received.");
+                string[] parts = message.Split('|');
+                if (parts.Length != 4)
+                {
+                    Console.WriteLine("[Network] Invalid AttackConfirmed format.");
+                    return;
+                }
+
+                if (Enum.TryParse(parts[1], out Rank rank) &&
+                    Enum.TryParse(parts[2], out Suit suit) &&
+                    int.TryParse(parts[3], out int slotIndex))
+                {
+                    var confirmedCard = localHand.FirstOrDefault(c => c.Rank == rank && c.Suit == suit);
+                    if (confirmedCard != null)
+                    {
+                        // Remove from hand
+                        localHand.Remove(confirmedCard);
+                        DisplayPlayerHand(localHand);
+
+                        // Display the card in battlefield slot
+                        var slot = battlefieldPanel.Controls[slotIndex] as Panel;
+                        if (slot != null)
+                        {
+                            var cardImage = CardUIHelper.CreateCardImageOnly(confirmedCard);
+                            cardImage.Tag = confirmedCard;
+                            slot.Controls.Clear();
+                            slot.Controls.Add(cardImage);
+                        }
+
+                        Console.WriteLine("[Client] Attack card placed and hand updated.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("[Network] Failed to parse rank/suit/slotIndex in AttackConfirmed.");
+                }
+            }
+            else if (message == "ClientFinishAttack")
+            {
+                Console.WriteLine("[Network] Client requested to finish attack.");
+
+                if (!isHost)
+                {
+                    Console.WriteLine("[Network] Ignoring ClientFinishAttack on client side.");
+                    return;
+                }
+
+                if (gameEngine.CurrentAttacker != gameEngine.Guest)
+                {
+                    Console.WriteLine("[Host] Guest is not the attacker. Rejecting.");
+                    return;
+                }
+
+                bool allDefended = gameEngine.CurrentRound.All(pair => pair.Item2 != null);
+
+                if (allDefended)
+                {
+                    gameEngine.EndRound();
+
+
+                    string updatedHostHandJson = JsonConvert.SerializeObject(gameEngine.Host.Hand);
+                    networkManager.SendToClient("UpdateHand|" + updatedHostHandJson);
+
+                    DisplayPlayerHand(gameEngine.Guest.Hand); // show client's own updated hand
+                    UpdateOpponentCards(gameEngine.Host.Hand); // host hand as opponent
+                    SetupBattlefieldSlots();
+
+                    isClientTurn = false;
+                    networkManager.SendToClient("NextRound|");
+                    Console.WriteLine("[Host] All cards defended. Proceeding to next round (host will defend).");
+                }
+                else
+                {
+                    Console.WriteLine("[Host] Attack from guest is not fully defended. Ignoring.");
+                }
+
+                UpdateEndTurnButtonState();
             }
             else if (message.StartsWith("NextRound"))
             {
@@ -376,8 +441,20 @@ namespace DurakEnhanced.Controls
                 // 3. Update opponent’s cards (still just backs)
                 UpdateOpponentCards(opponentHand);
 
-                // 4. Re-enable client move
-                isClientTurn = true;
+                // 4. Check who is attacker
+                string[] parts = message.Split('|');
+                if (parts.Length == 2 && parts[1] == "Guest")
+                {
+                    isClientTurn = true;
+                    Console.WriteLine("[Client] It’s now our turn to ATTACK.");
+                }
+                else
+                {
+                    isClientTurn = false;
+                    Console.WriteLine("[Client] It’s now our turn to DEFEND.");
+                }
+
+                UpdateEndTurnButtonState(); // also update button label
             }
             else if (message.StartsWith("UpdateHand|"))
             {
@@ -408,10 +485,37 @@ namespace DurakEnhanced.Controls
                 UpdateOpponentCards(gameEngine.Guest.Hand);
                 DisplayPlayerHand(gameEngine.Host.Hand);
             }
+            else if (message == "AttackerWinsRound")
+            {
+                Console.WriteLine("[Client] Received AttackerWinsRound. Clearing battlefield and ending round.");
+
+                // 1. Collect all cards on battlefield into local hand
+                foreach (Panel slot in battlefieldPanel.Controls)
+                {
+                    foreach (Control cardControl in slot.Controls)
+                    {
+                        if (cardControl.Tag is Card card)
+                        {
+                            localHand.Add(card);
+                        }
+                    }
+                    slot.Controls.Clear();
+                }
+
+                DisplayPlayerHand(localHand);
+
+                // 2. Reset battlefield and update states
+                SetupBattlefieldSlots();
+
+                // Optional: clear CurrentRound-related visuals or internal data if needed
+                Console.WriteLine("[Client] Cards added to hand and battlefield cleared after losing round.");
+            }
             else
             {
                 Console.WriteLine("[Network] Unrecognized message: " + message);
             }
+
+            UpdateEndTurnButtonState();
         }
 
 
@@ -686,46 +790,73 @@ namespace DurakEnhanced.Controls
 
             if (isHost)
             {
-                bool isHostTurn = gameEngine.CurrentAttacker == gameEngine.Host;
-                Console.WriteLine($"[Host] Host turn? {isHostTurn}");
-
-                if (!isHostTurn)
+                if (isClientTurn)
                 {
-                    Console.WriteLine("[Host] Not host's turn to attack.");
-                    MessageBox.Show("It's not your turn to attack.");
-                    return;
-                }
+                    // Host is defending
+                    Console.WriteLine("[Host] Host attempting to defend.");
 
-                if (slot.Controls.Count > 0)
+                    if (slot.Controls.Count == 0)
+                    {
+                        Console.WriteLine("[Host] Slot is empty, cannot defend.");
+                        MessageBox.Show("You must defend against an existing attack.");
+                        return;
+                    }
+
+                    if (!(slot.Controls[0].Tag is Card attackCard))
+                    {
+                        Console.WriteLine("[Host] Slot does not contain a valid attack card.");
+                        MessageBox.Show("You must defend against an existing attack.");
+                        return;
+                    }
+
+                    string msg = $"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|defend";
+                    Console.WriteLine($"[Host] Sending to client: {msg} (not actually used for defense on host)");
+                    // Host processes own defense, so no SendMessage
+                    NetworkManager_MessageReceived($"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|defend");
+                }
+                else
                 {
-                    Console.WriteLine("[Host] Slot already occupied.");
-                    MessageBox.Show("This slot is already used.");
-                    return;
+                    // Host is attacking
+                    bool isHostTurn = gameEngine.CurrentAttacker == gameEngine.Host;
+                    Console.WriteLine($"[Host] Host turn? {isHostTurn}");
+
+                    if (!isHostTurn)
+                    {
+                        Console.WriteLine("[Host] Not host's turn to attack.");
+                        MessageBox.Show("It's not your turn to attack.");
+                        return;
+                    }
+
+                    if (slot.Controls.Count > 0)
+                    {
+                        Console.WriteLine("[Host] Slot already occupied.");
+                        MessageBox.Show("This slot is already used.");
+                        return;
+                    }
+
+                    bool success = gameEngine.Attack(droppedCard);
+                    Console.WriteLine($"[Host] Attack success? {success}");
+
+                    if (!success)
+                    {
+                        MessageBox.Show("Invalid attack move.");
+                        return;
+                    }
+
+                    var cardImage = CardUIHelper.CreateCardImageOnly(droppedCard);
+                    cardImage.Tag = droppedCard;
+                    slot.Controls.Clear();
+                    slot.Controls.Add(cardImage);
+                    DisplayPlayerHand(gameEngine.Host.Hand);
+
+                    string msg = $"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|attack";
+                    Console.WriteLine($"[Host] Sending to client: {msg}");
+                    networkManager?.SendToClient(msg);
                 }
-
-                bool success = gameEngine.Attack(droppedCard);
-                Console.WriteLine($"[Host] Attack success? {success}");
-
-                if (!success)
-                {
-                    MessageBox.Show("Invalid attack move.");
-                    return;
-                }
-
-                var cardImage = CardUIHelper.CreateCardImageOnly(droppedCard);
-                cardImage.Tag = droppedCard; // ✅ attach card info for future defense
-
-                slot.Controls.Clear();
-                slot.Controls.Add(cardImage); // ✅ use the tagged cardImage
-                DisplayPlayerHand(gameEngine.Host.Hand);
-
-                string msg = $"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|attack";
-                Console.WriteLine($"[Host] Sending to client: {msg}");
-                networkManager?.SendToClient(msg);
             }
-            else // Client defending
+            else // Client logic: decide whether to attack or defend
             {
-                Console.WriteLine($"[Client] Attempting to defend in slot {slotIndex}");
+                Console.WriteLine($"[Client] DragDrop: isClientTurn: {isClientTurn}, SlotIndex: {slotIndex}");
 
                 if (!isClientTurn)
                 {
@@ -736,24 +867,31 @@ namespace DurakEnhanced.Controls
 
                 if (slot.Controls.Count == 0)
                 {
-                    Console.WriteLine("[Client] Slot is empty, cannot defend.");
-                    MessageBox.Show("You must defend against an existing attack.");
-                    return;
-                }
+                    // ATTACK
+                    Console.WriteLine("[Client] Attempting to ATTACK.");
 
-                if (!(slot.Controls[0].Tag is Card attackCard))
+                    string msg = $"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|attack";
+                    Console.WriteLine($"[Client] Sending to host: {msg}");
+                    networkManager?.SendMessage(msg);
+                }
+                else
                 {
-                    Console.WriteLine("[Client] Slot does not contain a valid attack card.");
-                    MessageBox.Show("You must defend against an existing attack.");
-                    return;
+                    // DEFEND
+                    Console.WriteLine("[Client] Attempting to DEFEND.");
+
+                    if (!(slot.Controls[0].Tag is Card attackCard))
+                    {
+                        Console.WriteLine("[Client] Slot does not contain a valid attack card.");
+                        MessageBox.Show("You must defend against an existing attack.");
+                        return;
+                    }
+
+                    string msg = $"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|defend";
+                    Console.WriteLine($"[Client] Sending to host: {msg}");
+                    networkManager?.SendMessage(msg);
                 }
-
-                string msg = $"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|defend";
-                Console.WriteLine($"[Client] Sending to host: {msg}");
-                networkManager?.SendMessage(msg);
-
-                // We wait for confirmation from host before removing from hand
             }
+
         }
 
         private void rollDiceButton_Click(object sender, EventArgs e)
@@ -807,5 +945,178 @@ namespace DurakEnhanced.Controls
         {
 
         }
+
+        private void endTurnButton_Click(object sender, EventArgs e)
+        {
+            if (isHost)
+            {
+                bool isAttacker = gameEngine.CurrentAttacker == gameEngine.Host;
+
+                if (isAttacker)
+                {
+                    // Host wants to finish the attack
+                    Console.WriteLine("[Host] Finish Attack button clicked.");
+                    bool allDefended = gameEngine.CurrentRound.All(pair => pair.Item2 != null);
+
+                    if (allDefended)
+                    {
+                        gameEngine.EndRound();
+
+                        string updatedGuestHandJson = JsonConvert.SerializeObject(gameEngine.Guest.Hand);
+                        networkManager.SendToClient("UpdateHand|" + updatedGuestHandJson);
+
+                        DisplayPlayerHand(gameEngine.Host.Hand);
+                        UpdateOpponentCards(gameEngine.Guest.Hand);
+                        SetupBattlefieldSlots();
+                        TriggerDiceRoll();
+
+
+                        string attackerRole = gameEngine.CurrentAttacker == gameEngine.Host ? "Host" : "Guest";
+                        networkManager.SendToClient($"NextRound|{attackerRole}");
+                        UpdateEndTurnButtonState();
+                        Console.WriteLine("[Host] All cards defended. Proceeding to next round.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Some attacks are not defended yet!");
+                        Console.WriteLine("[Host] Attack not fully defended.");
+                    }
+                }
+                else
+                {
+                    // Host is defender, wants to take cards
+                    Console.WriteLine("[Host] Take Cards button clicked.");
+
+                    bool hasCardsToTake = battlefieldPanel.Controls
+                        .OfType<Panel>()
+                        .Any(slot => slot.Controls.Count > 0);
+
+                    if (!hasCardsToTake)
+                    {
+                        MessageBox.Show("There are no cards to take.");
+                        Console.WriteLine("[Host] No cards on battlefield to take.");
+                        return;
+                    }
+
+                    foreach (Panel slot in battlefieldPanel.Controls)
+                    {
+                        foreach (Control cardControl in slot.Controls)
+                        {
+                            if (cardControl.Tag is Card card)
+                            {
+                                gameEngine.Host.Hand.Add(card);
+                            }
+                        }
+                        slot.Controls.Clear();
+                    }
+
+                    DisplayPlayerHand(gameEngine.Host.Hand);
+                    networkManager.SendToClient("AttackerWinsRound");
+
+                    gameEngine.EndRound(); // Optional: also reset internally for host
+                    SetupBattlefieldSlots();
+                    UpdateOpponentCards(gameEngine.Guest.Hand);
+                    Console.WriteLine("[Host] Notified client that attacker won.");
+                }
+            }
+            else
+            {
+                if (isClientTurn) // Client is attacker
+                {
+                    Console.WriteLine("[Client] Finish Attack button clicked.");
+                    networkManager?.SendMessage("ClientFinishAttack");
+                }
+                else // Client is defender
+                {
+                    Console.WriteLine("[Client] Take Cards button clicked.");
+
+                    bool hasCardsToTake = battlefieldPanel.Controls
+                        .OfType<Panel>()
+                        .Any(slot => slot.Controls.Count > 0);
+
+                    if (!hasCardsToTake)
+                    {
+                        MessageBox.Show("There are no cards to take.");
+                        Console.WriteLine("[Client] No cards on battlefield to take.");
+                        return;
+                    }
+
+                    foreach (Panel slot in battlefieldPanel.Controls)
+                    {
+                        foreach (Control cardControl in slot.Controls)
+                        {
+                            if (cardControl.Tag is Card card)
+                            {
+                                localHand.Add(card);
+                            }
+                        }
+                        slot.Controls.Clear();
+                    }
+
+                    DisplayPlayerHand(localHand);
+                    networkManager?.SendMessage("DefenderTookCards");
+                    Console.WriteLine("[Client] Sent DefenderTookCards to host.");
+                }
+            }
+
+            UpdateEndTurnButtonState();
+        }
+
+
+
+        private void UpdateEndTurnButtonState()
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)UpdateEndTurnButtonState);
+                return;
+            }
+
+            if (isHost)
+            {
+                if (!isClientTurn) // Host attacking
+                {
+                    btnEndTurn.Visible = true;
+                    btnEndTurn.Text = "Finish Attack";
+                }
+                else // Host defending
+                {
+                    btnEndTurn.Visible = true;
+                    btnEndTurn.Text = "Take Cards";
+                }
+            }
+            else
+            {
+                if (isClientTurn) // Client attacking
+                {
+                    btnEndTurn.Visible = true;
+                    btnEndTurn.Text = "Finish Attack";
+                }
+                else // Client defending
+                {
+                    btnEndTurn.Visible = true;
+                    btnEndTurn.Text = "Take Cards";
+                }
+            }
+
+            Console.WriteLine($"[UI] End Turn Button: {btnEndTurn.Text}, Visible: {btnEndTurn.Visible}");
+        }
+
+        private void TriggerDiceRoll()
+        {
+            // Center the DiceRollerControl within PlaygroundControl
+            diceRollerControl.Left = (this.Width - diceRollerControl.Width) / 2;
+            diceRollerControl.Top = (this.Height - diceRollerControl.Height) / 2;
+            diceRollerControl.BringToFront();
+            diceRollerControl.Visible = true;
+
+            diceRollerControl.RollD20(result =>
+            {
+                rollResultLabel.Text = $"You rolled: {result}";
+            });
+        }
+
+
+
     }
 }

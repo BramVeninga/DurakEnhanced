@@ -32,7 +32,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rollResultLabel = new System.Windows.Forms.Label();
-            this.rollDiceButton = new System.Windows.Forms.Button();
+            this.btnEndTurn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,22 +69,22 @@
             this.rollResultLabel.Text = "RollResult";
             this.rollResultLabel.Click += new System.EventHandler(this.rollResultLabel_Click);
             // 
-            // rollDiceButton
+            // btnEndTurn
             // 
-            this.rollDiceButton.Location = new System.Drawing.Point(1107, 371);
-            this.rollDiceButton.Name = "rollDiceButton";
-            this.rollDiceButton.Size = new System.Drawing.Size(75, 23);
-            this.rollDiceButton.TabIndex = 15;
-            this.rollDiceButton.Text = "Roll D20";
-            this.rollDiceButton.UseVisualStyleBackColor = true;
-            this.rollDiceButton.Click += new System.EventHandler(this.rollDiceButton_Click);
+            this.btnEndTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEndTurn.Location = new System.Drawing.Point(3, 542);
+            this.btnEndTurn.Name = "btnEndTurn";
+            this.btnEndTurn.Size = new System.Drawing.Size(192, 56);
+            this.btnEndTurn.TabIndex = 16;
+            this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.Click += new System.EventHandler(this.endTurnButton_Click);
             // 
             // PlaygroundControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(236)))), ((int)(((byte)(212)))));
-            this.Controls.Add(this.rollDiceButton);
+            this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.rollResultLabel);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox1);
@@ -104,6 +104,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label rollResultLabel;
-        private System.Windows.Forms.Button rollDiceButton;
+        private System.Windows.Forms.Button btnEndTurn;
     }
 }

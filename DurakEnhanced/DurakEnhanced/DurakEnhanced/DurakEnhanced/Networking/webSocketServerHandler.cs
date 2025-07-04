@@ -9,13 +9,14 @@ namespace DurakEnhanced.Networking
         private static WebSocketServer server;
         private static GameBehavior gameBehavior;
 
+        public static int CurrentPort { get; internal set; }
+
         public static event Action<string> OnMessageReceived;
 
         public static void Start(int port)
         {
             server = new WebSocketServer(port);
-
-            // Voeg service toe en bewaar referentie naar GameBehavior
+            CurrentPort = port;
             server.AddWebSocketService<GameBehavior>("/game", () =>
             {
                 gameBehavior = new GameBehavior();
@@ -39,7 +40,6 @@ namespace DurakEnhanced.Networking
             server?.Stop();
         }
 
-        // ✅ Subclass voor behavior
         private class GameBehavior : WebSocketBehavior
         {
             public event Action<string> MessageReceived;

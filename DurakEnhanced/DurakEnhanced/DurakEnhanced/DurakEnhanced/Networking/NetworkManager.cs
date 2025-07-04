@@ -62,7 +62,15 @@ namespace DurakEnhanced.Networking
 
         public int GetPort()
         {
-            return server?.Port ?? -1;
+            if (server != null)
+            {
+                return server.Port;
+            }
+            else
+            {
+                // Try to get port from WebSocketServerHandler if available
+                return WebSocketServerHandler.CurrentPort;
+            }
         }
     }
 }

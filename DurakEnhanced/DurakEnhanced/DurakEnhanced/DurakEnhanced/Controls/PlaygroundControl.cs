@@ -52,7 +52,6 @@ namespace DurakEnhanced.Controls
             }
 
             var trollCard = new TrollCard1(this);
-            actionCards.Add(trollCard);
             var backImage = Properties.Resources.backofcard;
             var revealedCard = Properties.Resources.Hearts_5_white;
         }
@@ -215,6 +214,7 @@ namespace DurakEnhanced.Controls
 
                             gameEngine.Guest.Hand.RemoveAll(c => c.Rank == rank && c.Suit == suit);
                             UpdateOpponentCards(gameEngine.Guest.Hand);
+                            SendOpponentHandToClient();
                         }
                         else
                         {
@@ -249,8 +249,19 @@ namespace DurakEnhanced.Controls
 
                     if (attackSuccess)
                     {
-                        isClientTurn = true;
-                        Console.WriteLine("[Network] Client's turn set to TRUE (can now defend).");
+                        // If the client is NOT the one who initiated the attack (i.e., not host),
+                        // then the client is now the DEFENDER
+                        if (!isHost)
+                        {
+                            isClientTurn = false; // DEFENDING, not attacking
+                            Console.WriteLine("[Network] Client's turn set to FALSE (must defend).");
+                        }
+                        else
+                        {
+                            isClientTurn = true; // Host attacked, now client defends
+                            Console.WriteLine("[Network] Client's turn set to TRUE (can now defend).");
+                            SendOpponentHandToClient();
+                        }
                     }
                 }
 
@@ -293,14 +304,36 @@ namespace DurakEnhanced.Controls
                     networkManager?.SendToClient(confirmMsg);
                     Console.WriteLine("[Network] Sent DefendConfirmed message to client.");
 
-                    var toRemove = gameEngine.Guest.Hand.FirstOrDefault(c => c.Suit == suit && c.Rank == rank);
-                    if (toRemove != null)
+                    if (isHost)
                     {
-                        gameEngine.Guest.Hand.Remove(toRemove);
-                        UpdateOpponentCards(gameEngine.Guest.Hand); // ✅ Update visual deck
+                        var toRemove = gameEngine.Host.Hand.FirstOrDefault(c => c.Suit == suit && c.Rank == rank);
+                        if (toRemove != null)
+                        {
+                            gameEngine.Host.Hand.Remove(toRemove);
+                            this.BeginInvoke(new Action(() =>
+                            {
+                                DisplayPlayerHand(gameEngine.Host.Hand);
+                            }));
+                            Console.WriteLine("[Debug] Host hand updated after defense.");
+                            SendOpponentHandToClient();
+                        }
+                    }
+                    else
+                    {
+                        var toRemove = gameEngine.Guest.Hand.FirstOrDefault(c => c.Suit == suit && c.Rank == rank);
+                        if (toRemove != null)
+                        {
+                            gameEngine.Guest.Hand.Remove(toRemove);
+                            UpdateOpponentCards(gameEngine.Guest.Hand); // Update guest hand (as seen by host)
+                        }
                     }
 
-                    isClientTurn = false;
+                    Console.WriteLine("[Debug] Host hand contents:");
+                    foreach (var c in gameEngine.Host.Hand)
+                    {
+                        Console.WriteLine($" - {c.Rank} of {c.Suit}");
+                    }
+
                     Console.WriteLine("[Network] Client's turn set to FALSE.");
                 }
             }
@@ -418,8 +451,10 @@ namespace DurakEnhanced.Controls
                     SetupBattlefieldSlots();
 
                     isClientTurn = false;
-                    networkManager.SendToClient("NextRound|");
+                    string nextAttacker = gameEngine.CurrentAttacker == gameEngine.Host ? "Host" : "Guest";
+                    networkManager.SendToClient($"NextRound|{nextAttacker}");
                     Console.WriteLine("[Host] All cards defended. Proceeding to next round (host will defend).");
+                    SendOpponentHandToClient();
                 }
                 else
                 {
@@ -469,46 +504,55 @@ namespace DurakEnhanced.Controls
                     Console.WriteLine("[Client] Failed to update hand: " + ex.Message);
                 }
             }
-            else if (message == "DefenderTookCards")
+            else if (message.StartsWith("OpponentHandUpdate|"))
             {
-                Console.WriteLine("[Network] Client took cards. Clearing battlefield on host.");
-
-                // Clear all cards from the battlefield on host UI
-                foreach (Panel slot in battlefieldPanel.Controls)
+                string json = message.Substring("OpponentHandUpdate|".Length);
+                try
                 {
-                    slot.Controls.Clear();
+                    opponentHand = JsonConvert.DeserializeObject<List<Card>>(json);
+                    UpdateOpponentCards(opponentHand);
+                    Console.WriteLine($"[Client] Opponent hand updated: {opponentHand.Count} cards.");
                 }
-
-                // Reset for next round
-                gameEngine.EndRound(); // ✅ Ensures roles, decks, timer, etc. are updated
-
-                UpdateOpponentCards(gameEngine.Guest.Hand);
-                DisplayPlayerHand(gameEngine.Host.Hand);
+                catch (Exception ex)
+                {
+                    Console.WriteLine("[Client] Failed to update opponent hand: " + ex.Message);
+                }
             }
-            else if (message == "AttackerWinsRound")
+            else if (message.StartsWith("DefenderTookCards|"))
             {
-                Console.WriteLine("[Client] Received AttackerWinsRound. Clearing battlefield and ending round.");
+                Console.WriteLine($"[Network] Message received: {message}");
 
-                // 1. Collect all cards on battlefield into local hand
+                string json = message.Substring("DefenderTookCards|".Length);
+                List<Card> updatedGuestHand = JsonConvert.DeserializeObject<List<Card>>(json);
+
                 foreach (Panel slot in battlefieldPanel.Controls)
                 {
-                    foreach (Control cardControl in slot.Controls)
-                    {
-                        if (cardControl.Tag is Card card)
-                        {
-                            localHand.Add(card);
-                        }
-                    }
                     slot.Controls.Clear();
                 }
 
-                DisplayPlayerHand(localHand);
+                gameEngine.EndRound(); // Handles deck refill + swapping turns
 
-                // 2. Reset battlefield and update states
+                DisplayPlayerHand(gameEngine.Host.Hand);    
+                UpdateOpponentCards(gameEngine.Guest.Hand);
+                SendOpponentHandToClient();
+            }
+            else if (message.StartsWith("AttackerWinsRound|"))
+            {
+                Console.WriteLine("[Network] Host took cards, updating battlefield and hands.");
+
+                string json = message.Substring("AttackerWinsRound|".Length);
+                List<Card> updatedHostHand = JsonConvert.DeserializeObject<List<Card>>(json);
+                opponentHand = updatedHostHand;
+
+                // Clear battlefield
+                foreach (Panel slot in battlefieldPanel.Controls)
+                    slot.Controls.Clear();
+
                 SetupBattlefieldSlots();
+                SendOpponentHandToClient();
+                UpdateOpponentCards(opponentHand);
 
-                // Optional: clear CurrentRound-related visuals or internal data if needed
-                Console.WriteLine("[Client] Cards added to hand and battlefield cleared after losing round.");
+                Console.WriteLine("[Client] Host hand updated and battlefield cleared.");
             }
             else
             {
@@ -721,6 +765,7 @@ namespace DurakEnhanced.Controls
                 var card = e.Data.GetData(typeof(Card)) as Card;
                 var btn = CardUIHelper.CreateBattlefieldCardButton(card);
                 battlefieldPanel.Controls.Add(btn);
+                UpdateEndTurnButtonState();
             }
         }
 
@@ -811,8 +856,13 @@ namespace DurakEnhanced.Controls
 
                     string msg = $"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|defend";
                     Console.WriteLine($"[Host] Sending to client: {msg} (not actually used for defense on host)");
-                    // Host processes own defense, so no SendMessage
-                    NetworkManager_MessageReceived($"PlayCard|{droppedCard.Rank}|{droppedCard.Suit}|{slotIndex}|defend");
+
+                    // Simulate the message locally
+                    NetworkManager_MessageReceived(msg);
+
+                    // Refresh hand UI after defense
+                    DisplayPlayerHand(gameEngine.Host.Hand);
+                    SendOpponentHandToClient();
                 }
                 else
                 {
@@ -858,12 +908,6 @@ namespace DurakEnhanced.Controls
             {
                 Console.WriteLine($"[Client] DragDrop: isClientTurn: {isClientTurn}, SlotIndex: {slotIndex}");
 
-                if (!isClientTurn)
-                {
-                    Console.WriteLine("[Client] Not client’s turn.");
-                    MessageBox.Show("It's not your turn.");
-                    return;
-                }
 
                 if (slot.Controls.Count == 0)
                 {
@@ -892,20 +936,6 @@ namespace DurakEnhanced.Controls
                 }
             }
 
-        }
-
-        private void rollDiceButton_Click(object sender, EventArgs e)
-        {
-            // Center the DiceRollerControl within PlaygroundControl
-            diceRollerControl.Left = (this.Width - diceRollerControl.Width) / 2;
-            diceRollerControl.Top = (this.Height - diceRollerControl.Height) / 2;
-            diceRollerControl.BringToFront();
-            diceRollerControl.Visible = true;
-
-            diceRollerControl.RollD20(result =>
-            {
-                rollResultLabel.Text = $"You rolled: {result}";
-            });
         }
 
         private void DisplayActionCards()
@@ -941,11 +971,6 @@ namespace DurakEnhanced.Controls
             }
         }
 
-        private void rollResultLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void endTurnButton_Click(object sender, EventArgs e)
         {
             if (isHost)
@@ -974,6 +999,7 @@ namespace DurakEnhanced.Controls
                         string attackerRole = gameEngine.CurrentAttacker == gameEngine.Host ? "Host" : "Guest";
                         networkManager.SendToClient($"NextRound|{attackerRole}");
                         UpdateEndTurnButtonState();
+                        SendOpponentHandToClient();
                         Console.WriteLine("[Host] All cards defended. Proceeding to next round.");
                     }
                     else
@@ -998,25 +1024,14 @@ namespace DurakEnhanced.Controls
                         return;
                     }
 
-                    foreach (Panel slot in battlefieldPanel.Controls)
-                    {
-                        foreach (Control cardControl in slot.Controls)
-                        {
-                            if (cardControl.Tag is Card card)
-                            {
-                                gameEngine.Host.Hand.Add(card);
-                            }
-                        }
-                        slot.Controls.Clear();
-                    }
+                    gameEngine.EndRound(); // Reset internally before updating hands
 
-                    DisplayPlayerHand(gameEngine.Host.Hand);
-                    networkManager.SendToClient("AttackerWinsRound");
+                    string updatedHostHandJson = JsonConvert.SerializeObject(gameEngine.Host.Hand);
+                    networkManager.SendToClient("AttackerWinsRound|" + updatedHostHandJson);
 
-                    gameEngine.EndRound(); // Optional: also reset internally for host
                     SetupBattlefieldSlots();
                     UpdateOpponentCards(gameEngine.Guest.Hand);
-                    Console.WriteLine("[Host] Notified client that attacker won.");
+                    DisplayPlayerHand(gameEngine.Host.Hand); // Refresh own hand UI
                 }
             }
             else
@@ -1047,15 +1062,25 @@ namespace DurakEnhanced.Controls
                         {
                             if (cardControl.Tag is Card card)
                             {
-                                localHand.Add(card);
+                                bool alreadyInHand = localHand.Any(c => c.Rank == card.Rank && c.Suit == card.Suit);
+                                if (!alreadyInHand)
+                                {
+                                    localHand.Add(card);
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"[Client] Skipped adding duplicate card: {card.Rank} of {card.Suit}");
+                                }
                             }
                         }
                         slot.Controls.Clear();
                     }
 
                     DisplayPlayerHand(localHand);
-                    networkManager?.SendMessage("DefenderTookCards");
-                    Console.WriteLine("[Client] Sent DefenderTookCards to host.");
+
+                    string handJson = JsonConvert.SerializeObject(localHand);
+                    networkManager?.SendMessage("DefenderTookCards|" + handJson);
+                    Console.WriteLine("[Client] Sent DefenderTookCards with updated hand to host.");
                 }
             }
 
@@ -1066,41 +1091,95 @@ namespace DurakEnhanced.Controls
 
         private void UpdateEndTurnButtonState()
         {
-            if (InvokeRequired)
-            {
-                Invoke((MethodInvoker)UpdateEndTurnButtonState);
-                return;
-            }
+            bool hasCardsOnBattlefield = battlefieldPanel != null &&
+                battlefieldPanel.Controls
+                    .OfType<Panel>()
+                    .Any(slot => slot.Controls.Count > 0);
 
-            if (isHost)
+            if (!isHost)
             {
-                if (!isClientTurn) // Host attacking
+                // Client logic
+                if (isClientTurn)
                 {
-                    btnEndTurn.Visible = true;
-                    btnEndTurn.Text = "Finish Attack";
+                    // Client is attacker
+                    if (hasCardsOnBattlefield)
+                    {
+                        btnEndTurn.Visible = true;
+                        btnEndTurn.Text = "Finish Attack";
+                        Console.WriteLine("[Client] Button state updated to 'Finish Attack'");
+                    }
+                    else
+                    {
+                        btnEndTurn.Visible = false;
+                        btnEndTurn.Text = "";
+                        Console.WriteLine("[Client] Button hidden — no attacks to finish.");
+                    }
                 }
-                else // Host defending
+                else
                 {
-                    btnEndTurn.Visible = true;
-                    btnEndTurn.Text = "Take Cards";
+                    // Client is defender
+                    if (hasCardsOnBattlefield)
+                    {
+                        btnEndTurn.Visible = true;
+                        btnEndTurn.Text = "Take Cards";
+                        Console.WriteLine("[Client] Button state updated to 'Take Cards'");
+                    }
+                    else
+                    {
+                        btnEndTurn.Visible = false;
+                        btnEndTurn.Text = "";
+                        Console.WriteLine("[Client] Button hidden — no cards to take.");
+                    }
                 }
             }
             else
             {
-                if (isClientTurn) // Client attacking
+                // Host logic
+                if (gameEngine == null || gameEngine.CurrentAttacker == null)
                 {
-                    btnEndTurn.Visible = true;
-                    btnEndTurn.Text = "Finish Attack";
+                    btnEndTurn.Visible = false;
+                    btnEndTurn.Text = "";
+                    Console.WriteLine("[Host] Cannot update button — game state not ready.");
+                    return;
                 }
-                else // Client defending
+
+                bool isHostAttacker = gameEngine.CurrentAttacker == gameEngine.Host;
+
+                if (isHostAttacker)
                 {
-                    btnEndTurn.Visible = true;
-                    btnEndTurn.Text = "Take Cards";
+                    if (hasCardsOnBattlefield)
+                    {
+                        btnEndTurn.Visible = true;
+                        btnEndTurn.Text = "Finish Attack";
+                        Console.WriteLine("[Host] Button state updated to 'Finish Attack'");
+                    }
+                    else
+                    {
+                        btnEndTurn.Visible = false;
+                        btnEndTurn.Text = "";
+                        Console.WriteLine("[Host] Button hidden — no attacks to finish.");
+                    }
+                }
+                else
+                {
+                    if (hasCardsOnBattlefield)
+                    {
+                        btnEndTurn.Visible = true;
+                        btnEndTurn.Text = "Take Cards";
+                        Console.WriteLine("[Host] Button state updated to 'Take Cards'");
+                    }
+                    else
+                    {
+                        btnEndTurn.Visible = false;
+                        btnEndTurn.Text = "";
+                        Console.WriteLine("[Host] Button hidden — no cards to take.");
+                    }
                 }
             }
-
-            Console.WriteLine($"[UI] End Turn Button: {btnEndTurn.Text}, Visible: {btnEndTurn.Visible}");
         }
+
+
+
 
         private void TriggerDiceRoll()
         {
@@ -1113,7 +1192,14 @@ namespace DurakEnhanced.Controls
             diceRollerControl.RollD20(result =>
             {
                 rollResultLabel.Text = $"You rolled: {result}";
+                actionCards.Add(new TrollCard1(this));
+                DisplayActionCards();
             });
+        }
+        private void SendOpponentHandToClient()
+        {
+            var opponentHandJson = JsonConvert.SerializeObject(gameEngine.Host.Hand);
+            networkManager.SendToClient("OpponentHandUpdate|" + opponentHandJson);
         }
 
 

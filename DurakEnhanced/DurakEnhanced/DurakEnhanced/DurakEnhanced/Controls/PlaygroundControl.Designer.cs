@@ -67,7 +67,6 @@
             this.rollResultLabel.Size = new System.Drawing.Size(55, 13);
             this.rollResultLabel.TabIndex = 14;
             this.rollResultLabel.Text = "RollResult";
-            this.rollResultLabel.Click += new System.EventHandler(this.rollResultLabel_Click);
             // 
             // btnEndTurn
             // 
